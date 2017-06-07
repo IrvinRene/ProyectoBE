@@ -24,3 +24,27 @@
           document.getElementById('id_textarea_pared').value = "";
         }
       }
+/*+++++++++++++++++++++++script piso+++++++++++++++++++++++++++++++++++++++++++*/
+      document.getElementById("id_piso").addEventListener("change", myFunction2);
+
+      function myFunction2() {
+        var x = document.getElementById("id_piso");
+        if(x.options[x.selectedIndex].text == "Otros"){
+          $("#piso").css("display", "block");
+        }else{
+          $("#piso").css("display", "none");
+          document.getElementById('id_textarea_piso').value = "";
+        }
+      }
+/*+++++++++++++++++++++++script zinc+++++++++++++++++++++++++++++++++++++++++++*/
+      document.getElementById("id_zinc").addEventListener("change", myFunction3);
+
+      function myFunction3() {
+        var x = document.getElementById("id_zinc");
+        if(x.options[x.selectedIndex].text == "Otros"){
+          $("#zinc").css("display", "block");
+        }else{
+          $("#zinc").css("display", "none");
+          document.getElementById('id_textarea_zinc').value = "";
+        }
+      }

@@ -1,8 +1,5 @@
 
 @extends('layouts.marco')
-
-
-
 @section('content')
 <div class="container">
    
@@ -31,8 +28,6 @@
                 <label for="vivienda" class="col-sm-2 control-label" >Zona</label>
                 <div class="col-sm-6">
                 {!! Form:: select('zona_ubs', App\Zona_ub::pluck('zona_ub'), null, array('class'=>'form-control', 'name'=>'zona_ub')) !!}
-                
-                  
                 </div>
               </div>
             </div>
@@ -58,7 +53,12 @@
             <div class="form-group">
               <label for="vivienda" class="col-sm-2 control-label" >Pisos</label>
                 <div class="col-sm-6">
-                {!! Form:: select('material_piso', App\Material_piso::pluck('material_piso'), null, array('class'=>'form-control', 'name'=>'zona_ub')) !!}
+                {!! Form:: select('material_piso', App\Material_piso::pluck('material_piso'), null, array('class'=>'form-control', 'name'=>'zona_ub', 'id'=>'id_piso')) !!}
+                 <script src="/js/show.js"></script>
+                 <div class="form" id="piso" style="display: none;">
+                    <label class="col-sm-2 control-label" >Especifíque</label>
+                    <textarea type="text" id="id_textarea_piso" class="form-control" name="descripcion" placeholder="Especifíque"></textarea>
+                  </div>
                 </div>           
             </div>
           </div>
@@ -66,8 +66,48 @@
             <div class="form-group">
               <label for="vivienda" class="col-sm-2 control-label" >Techo</label>
                 <div class="col-sm-6">
-                {!! Form:: select('material_techo', App\Material_techo::pluck('material_techo'), null, array('class'=>'form-control', 'name'=>'zona_ub')) !!}
+                {!! Form:: select('material_techo', App\Material_techo::pluck('material_techo'), null, array('class'=>'form-control', 'name'=>'zona_ub', 'id'=>'id_zinc')) !!}
+                <script src="/js/show.js"></script>
+                 <div class="form" id="zinc" style="display: none;">
+                    <label class="col-sm-2 control-label" >Especifíque</label>
+                    <textarea type="text" id="id_textarea_zinc" class="form-control" name="descripcion" placeholder="Especifíque"></textarea>
+                  </div>
                 </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+        <h4><strong>La vivienda es:</strong></h4>
+          <div class="col-md-3">
+            <div class="form-group"> 
+            <div class="col-sm-4">
+             <label for="vivienda" class="col-sm-2 control-label" >Tamaño</label>
+             </div>
+              <div class="col-sm-6"> 
+              {!! Form:: select('tamagno_vivienda', App\Tamagno_vivienda::pluck('tamagno_vivienda'), null, array('class'=>'form-control', 'name'=>'tamagno_vivienda')) !!}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group"> 
+            <div class="col-sm-4">
+             <label for="vivienda" class="col-sm-2 control-label" >Iluminación</label>
+            </div> 
+            <div class="col-sm-6">  
+              {!! Form:: select('tipo_iluminacion', App\Iluminacion::pluck('tipo_iluminacion'), null, array('class'=>'form-control', 'name'=>'tipo_iluminacion')) !!}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group"> 
+            <div class="col-sm-4">
+             <label for="vivienda" class="col-sm-2 control-label" >Instalaciones sanitarias</label>
+             </div>
+              <div class="col-sm-6"> 
+              {!! Form:: select('Insta_sanitaria', App\Insta_sanitaria::pluck('Insta_sanitaria'), null, array('class'=>'form-control', 'name'=>'Insta_sanitaria')) !!}
+              </div>
             </div>
           </div>
         </div>
