@@ -1,5 +1,5 @@
 @extends('layouts.marco')
 
-@section('content')
+@section('')
 @include('service_view.tipo_vivienda')
 @endsection
