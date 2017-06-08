@@ -1,8 +1,9 @@
 
 @extends('layouts.marco')
-@section('content')
+
+@section('tipo_vivienda')
 <div class="container">
-   
+  
   <form class="form-horizontal" role="form" method="POST" action="{{ url('form')}}" >
       {{ csrf_field() }}
       <div class="row">
