@@ -21,4 +21,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('/form', 'Informacion_viviendas');
-Route::resource('/noticias', 'Noticias');
+
+Route::get('/regnoticia', 'Regnoticia@index');
+Route::post('/noticia', 'Regnoticia@store');
