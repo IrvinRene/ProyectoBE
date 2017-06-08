@@ -14,7 +14,7 @@ class Informacion_viviendas extends Controller
      */
     public function index()
     {
-         return view ('form');
+         return view ('service_view.tipo_vivienda');
     }
 
     /**

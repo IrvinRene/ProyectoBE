@@ -1,4 +1,3 @@
-
 /*+++++++++++++++++++++++script vivienda+++++++++++++++++++++++++++++++++++++++++++*/
       document.getElementById("id_d").addEventListener("change", myFunction);
 
