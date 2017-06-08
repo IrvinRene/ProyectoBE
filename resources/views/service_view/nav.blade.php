@@ -19,8 +19,9 @@
                   <li><a href="#" ><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
                   <li><a href="#"><span class="glyphicon glyphicon-file"></span> Formulario</a></li>
                   <li><a href="#" ><span class="glyphicon glyphicon-stats"></span> Reportes</a></li>
-                   <li><a href="#" ><span class="glyphicon glyphicon-plus"></span> Inscripción</a></li>
-               
+                  <li><a href="#" ><span class="glyphicon glyphicon-plus"></span> Inscripción</a></li>
+                  <li><a href="/regnoticia" ><span class="glyphicon glyphicon-plus"></span> Registrar Noticia</a></li>
+
                    <li class="dropdown">
                                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                               {{ Auth::user()->name }} <span class="caret"></span>
@@ -28,7 +29,7 @@
 
                                           <ul class="dropdown-menu" role="menu">
                                               <li>
-                                                  <a href="{{ url('/logout') }}" class="glyphicon glyphicon-log-out" 
+                                                  <a href="{{ url('/logout') }}" class="glyphicon glyphicon-log-out"
                                                       onclick="event.preventDefault();
                                                                document.getElementById('logout-form').submit();">
                                                       Logout
@@ -37,13 +38,13 @@
                                                   <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                                       {{ csrf_field() }}
                                                   </form>
-                         
+
                       </ul>
-               
+
             </div>
           </div>
-                 
-               
+
+
 
               </div><!-- /.navbar-collapse -->
 

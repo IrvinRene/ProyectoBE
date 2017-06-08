@@ -4,16 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Noticia extends Model
+class Noticia extends model
 {
+  protected $fillable = ['titulo', 'descripcion', 'urlimgnot'];
+  protected $guarded =['id'];
     //
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $table= 'noticias';
-    protected $fillable = [
-        'titulo', 'descripcion', 'urlImg',
-    ];
 }

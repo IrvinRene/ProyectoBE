@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Noticia;
+use storage;
 
-class Material_pareds extends Controller
+class Regnoticia extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,6 +15,8 @@ class Material_pareds extends Controller
      */
     public function index()
     {
+      $noticias = Noticia::all();
+      return view ('regnoticia', compact('noticias'));
         //
     }
 
@@ -35,6 +39,27 @@ class Material_pareds extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+          'titulo' => 'required',
+          'descripcion' => 'requerid'
+        ]);
+        $noticia = new Noticia();
+        $noticia->titulo = $request->titulo;
+        $noticia->descripcion = $request->descripcion;
+
+
+        $img = $request->file('urlimgnot');
+        $file_route = time().'_'.$img->getClienteOriginalName();
+        storage::disk('imgnoticia')->put($file_route, file_get_contents($img->getRealPath()));
+        $noticia->urlimgnot = $file_route;
+        $noticia->save();
+        /*if($noticia->save()){
+          return back()->with('msj', 'Datos guardados');
+        } else {
+          return back()->with('errormsj', 'Los datos no se guardaron');
+        }*/
+        return view ('regnoticia');
+
     }
 
     /**
