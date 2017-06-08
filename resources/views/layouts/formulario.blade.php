@@ -19,7 +19,7 @@
 <div class="form-group">
 		<label for="descripcion" class="col-sm-2 control-label" >Descripcion</label>
 		<div class="col-sm-10">
-		<textarea type="text" class="form-control" name="descripcion" placeholder="descripcion"> {{ Auth::user()->name }} </textarea>
+		<textarea type="text" class="form-control" name="descripcion" placeholder="descripcion"></textarea>
 		@if($errors->has('descripcion'))
 		<span style="color:red;">{{ $errors->first('descripcion') }}</span>
 		@endif
@@ -27,12 +27,12 @@
 </div>
 <div class="form-group">
 		<label for="urlImg" class="col-sm-2 control-label" >Imagen</label>
-		<div class="col-sm-10">
+		<div class="col-sm-4">
 		<input type="file" class="form-control" name="urlImg" >
 		</div>
 </div>
 <div class="form-group">
-		<div class="col-sm-offset-2 col-sm-10">
+		<div class="col-sm-offset-2 col-sm-8">
 		<button type="submit" class="btn btn-primary"> Crear </button>
 		</div>
 </div>
@@ -42,10 +42,8 @@
 <table>
 	<thead>
 		<th>niombre</th>
-		<th>hpla</th>
+		<th>hola</th>
 	</thead>
-
-
 </table>
 </div>
 @endsection

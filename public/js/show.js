@@ -48,3 +48,16 @@
           document.getElementById('id_textarea_zinc').value = "";
         }
       }
+
+/*+++++++++++++++++++++++script iluminacion+++++++++++++++++++++++++++++++++++++*/
+      document.getElementById("id_ilum").addEventListener("change", myFunction4);
+
+      function myFunction4() {
+        var x = document.getElementById("id_ilum");
+        if(x.options[x.selectedIndex].text == "Otros"){
+          $("#ilum").css("display", "block");
+        }else{
+          $("#ilum").css("display", "none");
+          document.getElementById('id_textarea_ilum').value = "";
+        }
+      }
