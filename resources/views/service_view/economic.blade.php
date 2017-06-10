@@ -1,7 +1,5 @@
 @extends('layouts.marco')
 
-
-
 @section('situación_economica')
 <div class="container">
 
@@ -10,27 +8,36 @@
       <div class="row">
           <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
             <div class="panel-heading"><h4><strong>Situación Económica</strong></h4></div>
-            <div class="panel-body" white-space:pre-line;>
+            <div class="panel-body">
               <div class="col-md-6">
                   <div class="form-group">
-                      <label  class="col-md-6 control-label" >¿Usted Trabaja?</label>
-                      <div id= "economico" class="col-sm-6">
+                      <label  class="col-md-3 control-label" >¿Usted Trabaja?</label>
+                      <div id= "economico" class="col-sm-4">
                         <select name="id_decision" class="form-control" id='id_decision'>
                           <option value="0" disabled selected>--Seleccionar--</option>
                           @foreach($decisions as $decision)
                             <option value="{{$decision->id_decision}}">{{$decision->decision}}</option>
                           @endforeach
                         </select>
-                      <script src="/js/show.js"></script>
+                      <script src="/js/situacion.js"></script>
                       </div>
                   </div>
               </div>
-              <fieldset class="form-inline col-md-12"  id="div_trabajo" style="display: none;">
-                <label class="control-label">Nombre de la Empresa &nbsp;</label><input type="text" id="id_nombre_empresa" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
-                <label class="control-label">Ocupación&nbsp; </label><input type="text" id="id_nombre_empresa" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
-                <label class="control-label">salario&nbsp; </label><input type="text" id="id_nombre_empresa" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;<br>
-                <label class="control-label">Teléfono&nbsp; </label><input type="text" id="id_nombre_empresa" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
-              </fielset>
+              <div  class="row">
+                <div class="col-md-12" id="div_trabajo" style="display: none;">
+                  <div class="col-md-3">
+                    <label class="control-label">Nombre de la Empresa &nbsp;</label><input type="text" id="id_nombre_empresa" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
+                  </div>
+                  <div class="col-md-3">
+                    <label class="control-label">Ocupación&nbsp; </label><input type="text" id="id_nombre_empresa" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
+                  </div>
+                  <div class="col-md-3">
+                    <label class="control-label">salario&nbsp; </label><input type="text" id="id_nombre_empresa" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;<br>
+                  </div>
+                  <div class="col-md-3">
+                    <label class="control-label">Teléfono&nbsp; </label><input type="text" id="id_nombre_empresa" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
+                </div>
+              </div>
           </div>
         </div>
       </div>
