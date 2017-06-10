@@ -20,7 +20,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('/form', 'Informacion_viviendas');
+Route::resource('/tipo_viv', 'Informacion_viviendas');
 
 Route::resource('/noticias', 'Noticias');
 Route::get('/economics', 'economicsController@index');
