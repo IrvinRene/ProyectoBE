@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Informacion_vivienda;
+use App\Recurso;
+use App\Decision;
 
-class Informacion_viviendas extends Controller
+class Residencia extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class Informacion_viviendas extends Controller
      */
     public function index()
     {
-         return view ('service_view.tipo_vivienda');
+        return view ('service_view.residencia');
     }
 
     /**
@@ -35,13 +36,8 @@ class Informacion_viviendas extends Controller
      */
     public function store(Request $request)
     {
-        //
-         $vivienda= new Informacion_vivienda();
-         $vivienda->tipo_vivienda_id_tipo_vivienda = $request->vivienda;
-     
-
-         $vivienda->save();
-         dd('Datos guardados');
+        dd('all');
+        
     }
 
     /**

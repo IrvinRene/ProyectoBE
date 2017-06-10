@@ -6,3 +6,6 @@
 Homestead.json
 Homestead.yaml
 .env
+resources/views/layouts/marco.blade.php
+app/Decision.php
+routes/web.php

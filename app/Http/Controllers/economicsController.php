@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Decision;
 use App\Recurso;
+use App\Lugar_trabajo;
+use App\Condicion;
 
 class economicsController extends Controller
 {
@@ -17,7 +19,9 @@ class economicsController extends Controller
     {
         $decisions = Decision::all();
         $recursos = Recurso::all();
-        return view ('service_view.economic', compact('decisions','recursos'));
+        $lugar_trabajos = Lugar_trabajo::all();
+        $condicions = Condicion::all();
+        return view ('service_view.economic', compact('decisions','recursos', 'lugar_trabajos', 'condicions'));
 
 
     }

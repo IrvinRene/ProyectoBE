@@ -1,5 +1,9 @@
 <!DOCTYPE html>
   <html lang="en">
+<<<<<<< HEAD
+=======
+
+>>>>>>> b0438c6848016da87623df20b1ea24a678b4f6f6
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,11 +18,13 @@
  </head>
 <body>
    @include('service_view.nav')
-
-
    @yield('situación_economica')
    @yield('regnoticia')
+<<<<<<< HEAD
 
+=======
+   @yield('tipo_vivienda')
+>>>>>>> b0438c6848016da87623df20b1ea24a678b4f6f6
 
   @include('service_view.footer')
 </body>
