@@ -1,0 +1,4 @@
+@extends('layouts.marco')
+@section('info_acad')
+
+@endsection

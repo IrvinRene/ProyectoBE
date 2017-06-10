@@ -43,24 +43,33 @@
         </div>
     </div>
 </div>
-<div>
-   <table class="table table-hover">
-     @if(isset($noticias))
-     <thead>
-       <th>Titulo</th>
-       <th>Descripcion</th>
-       <th>Imagen</th>
-     </head>
-     @endif
-     <tbody>
-       @foreach ($noticias as $noticia)
-           <tr>
-             <td>{{$noticia->titulo}}</td>
-             <td>{{$noticia->descripcion}}</td>
-             <td>{{$noticia->urlimgnot}}</td>
-           </tr>
-       @endforeach
-     </tbody>
-   </table>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Registro de noticias</div>
+                <div class="table-responsive">
+                   <table class="table table-bordered success">
+                     @if(isset($noticias))
+                     <thead>
+                       <th>Titulo</th>
+                       <th>Descripcion</th>
+                       <th>Imagen</th>
+                     </head>
+                     @endif
+                     <tbody>
+                       @foreach ($noticias as $noticia)
+                           <tr>
+                             <td>{{$noticia->titulo}}</td>
+                             <td>{{$noticia->descripcion}}</td>
+                             <td>{{$noticia->urlimgnot}}</td>
+                           </tr>
+                       @endforeach
+                     </tbody>
+                   </table>
+              </div>
+            </div>
+        </div>
+      </div>
 </div>
 @endsection
