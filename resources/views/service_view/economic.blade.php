@@ -29,14 +29,21 @@
                     <label class="control-label">Nombre de la Empresa &nbsp;</label><input type="text" id="id_nombre_empresa" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
                   </div>
                   <div class="col-md-3">
-                    <label class="control-label">Ocupación&nbsp; </label><input type="text" id="id_nombre_empresa" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
+                    <label class="control-label">Ocupación&nbsp; </label><input type="text" id="id_ocupacion" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
                   </div>
                   <div class="col-md-3">
-                    <label class="control-label">salario&nbsp; </label><input type="text" id="id_nombre_empresa" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;<br>
+                    <label class="control-label">salario&nbsp; </label><input type="text" id="id_salario" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;<br>
                   </div>
                   <div class="col-md-3">
-                    <label class="control-label">Teléfono&nbsp; </label><input type="text" id="id_nombre_empresa" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
+                    <label class="control-label">Teléfono&nbsp; </label><input type="text" id="id_nombre_telefono" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
                 </div>
+              </div>
+
+              <div  class="row">
+                <div class="col-md-6" id="div_dtrabajo" style="display: none;">
+                  <div class="col-md-6">
+                    <label class="control-label">¿Porqué no trabaja? &nbsp;</label><textarea type="text" id="id_porque_no" class="form-control" name="porque_no" placeholder="Especifique"></textarea>&nbsp; &nbsp; &nbsp;
+                  </div>
               </div>
           </div>
         </div>
