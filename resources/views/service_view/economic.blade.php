@@ -25,26 +25,58 @@
               </div>
               <div  class="row">
                 <div class="col-md-12" id="div_trabajo" style="display: none;">
-                  <div class="col-md-3">
-                    <label class="control-label">Nombre de la Empresa &nbsp;</label><input type="text" id="id_nombre_empresa" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
+                    <div class="col-md-3">
+                      <label class="control-label">Nombre de la Empresa &nbsp;</label><input type="text" id="id_nombre_empresa" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
+                    </div>
+                    <div class="col-md-3">
+                      <label class="control-label">Ocupación&nbsp; </label><input type="text" id="id_ocupacion" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
+                    </div>
+                    <div class="col-md-3">
+                      <label class="control-label">salario&nbsp; </label><input type="text" id="id_salario" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;<br>
+                    </div>
+                    <div class="col-md-3">
+                      <label class="control-label">Teléfono&nbsp; </label><input type="text" id="id_nombre_telefono" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
                   </div>
-                  <div class="col-md-3">
-                    <label class="control-label">Ocupación&nbsp; </label><input type="text" id="id_ocupacion" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
+                </div>
+                <div class="col-md-12" id="div_ddtrabajo" style="display: none;">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <label  class="col-md-4 control-label" >Lugar de Trabajo</label>
+                        <div id= "economico" class="col-sm-4">
+                          <select name="id_decision2" class="form-control" id='id_decision2'>
+                            <option value="0" disabled selected>--Seleccionar--</option>
+                            @foreach($lugar_trabajos as $lugar_trabajo)
+                              <option value="{{$lugar_trabajo->id_lugar_trabajo}}">{{$lugar_trabajo->lugar_trabajo}}</option>
+                            @endforeach
+                          </select>
+                        <script src="/js/situacion.js"></script>
+                        </div>
+                    </div>
                   </div>
-                  <div class="col-md-3">
-                    <label class="control-label">salario&nbsp; </label><input type="text" id="id_salario" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;<br>
+                  <div class="col-md-6" id="div_cond">
+                    <div class="form-group">
+                        <label  class="col-md-4 control-label" >Condición de Trabajo</label>
+                        <div id= "economico" class="col-sm-4">
+                          <select name="id_decision3" class="form-control" id='id_decision3'>
+                            <option value="0" disabled selected>--Seleccionar--</option>
+                            @foreach($condicions as $condicion)
+                              <option value="{{$condicion->id_condicion}}">{{$condicion->condicion}}</option>
+                            @endforeach
+                          </select>
+                        <script src="/js/situacion.js"></script>
+                        </div>
+                    </div>
                   </div>
-                  <div class="col-md-3">
-                    <label class="control-label">Teléfono&nbsp; </label><input type="text" id="id_nombre_telefono" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
+                </div>
+
+              <div class="col-md-6" id="div_dtrabajo" style="display: none;">
+                <div class="col-md-6">
+                  <label class="control-label">¿Porqué no trabaja? &nbsp;</label><textarea type="text" id="id_porque_no" class="form-control" name="porque_no" placeholder="Especifique"></textarea>&nbsp; &nbsp; &nbsp;
                 </div>
               </div>
+            </div>
 
-              <div  class="row">
-                <div class="col-md-6" id="div_dtrabajo" style="display: none;">
-                  <div class="col-md-6">
-                    <label class="control-label">¿Porqué no trabaja? &nbsp;</label><textarea type="text" id="id_porque_no" class="form-control" name="porque_no" placeholder="Especifique"></textarea>&nbsp; &nbsp; &nbsp;
-                  </div>
-              </div>
+
           </div>
         </div>
       </div>
