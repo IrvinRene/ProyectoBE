@@ -29,3 +29,4 @@ Route::get('/economics', 'economicsController@index');
 Route::get('/regnoticia', 'Regnoticia@index');
 Route::post('/noticia', 'Regnoticia@store');
 
+Route::resource('/residencia', 'Residencia');
