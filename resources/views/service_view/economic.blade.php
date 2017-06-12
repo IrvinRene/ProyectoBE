@@ -97,10 +97,10 @@
           <div class="panel-body">
             <h4><strong>Gasto Familiar Aproximado</strong></h4>
             <div class="col-md-3">
-              <label class="control-label">Vivienda &nbsp;</label><input type="number" id="viv" class="form-control" name="nombre_empresa" placeholder="" onchange="sumar(this.value);" ></input>&nbsp; &nbsp; &nbsp;
+              <label class="control-label">Vivienda &nbsp;</label><input type="money" id="viv" class="form-control" name="nombre_empresa" placeholder="" onchange="sumar(this.value);" ></input>&nbsp; &nbsp; &nbsp;
             </div>
             <div class="col-md-3">
-              <label class="control-label">Alimentación &nbsp; </label><input type="number" id="1" class="form-control" name="nombre_empresa" placeholder="" onchange="sumar(this.value);" ></input>&nbsp; &nbsp; &nbsp;
+              <label class="control-label">Alimentación &nbsp; </label><input type="money" id="1" class="form-control" name="nombre_empresa" placeholder="" onchange="sumar(this.value);" ></input>&nbsp; &nbsp; &nbsp;
             </div>
             <div class="col-md-3">
               <label class="control-label">Transporte &nbsp; </label><input type="number" id="2" class="form-control" name="nombre_empresa" placeholder="" onchange="sumar(this.value);" ></input>&nbsp; &nbsp; &nbsp;
