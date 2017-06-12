@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Recurso;
+use App\Decision;
 
 class Residencia extends Controller
 {
@@ -34,7 +36,8 @@ class Residencia extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd('all');
+        
     }
 
     /**

@@ -5468,6 +5468,10 @@ button.list-group-item-danger.active:focus {
   height: 6%;
   color: azure;
 }
+.panel-heading1 {
+  padding: 10px 15px;
+ 
+}
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
 }

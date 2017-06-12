@@ -13,6 +13,7 @@ class Decision extends Model
      *
      * @var array
      */
+    protected $table=('decisions');
     protected $fillable = [
         'decision',
     ];
