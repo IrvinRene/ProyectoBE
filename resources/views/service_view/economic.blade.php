@@ -151,11 +151,12 @@
               <label class="control-label">Especifíque a qué corresponde otros &nbsp; </label><textarea type="number" id="gastos_otross" class="form-control" name="nombre_empresa" placeholder="" onchange="sumar(this.value);"></textarea>&nbsp; &nbsp; &nbsp;
             </div>
             <div class="col-md-5">
-              <h4><strong>Total de Gastos &nbsp;</strong></h4>&nbsp; <strong><span style="color: red;" id="spTotal"></span></strong>
-
+              <h4><strong>Total de Gastos &nbsp;</strong></h4>&nbsp; <strong><h4 style="color: red;" id="spTotal"></h4></strong>
             </div>
-
-
+          </div>
+        </div>
+        <div class="panel panel-info">
+          <div class="panel-body">
           </div>
         </div>
   </form>
