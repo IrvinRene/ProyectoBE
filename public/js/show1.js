@@ -24,17 +24,3 @@
           document.getElementById('id_textarea_tipo').value = "";
         }
       }
-
-/*+++++++++++++++++++++++script condicion  de vivienda+++++++++++++++++++++++++++++++++++++*/
-        
-      document.getElementById("id_tipo").addEventListener("change", myFunction7);
-
-      function myFunction7() {
-        var x = document.getElementById("id_condicion");
-        if(x.options[x.selectedIndex].text == "Otros"){
-          $("#condicion_vivienda").css("display", "block");
-        }else{
-          $("#condicion_vivienda").css("display", "none");
-          document.getElementById('id_textarea_condicion').value = "";
-        }
-      }

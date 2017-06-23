@@ -61,4 +61,16 @@
         }
       }
 
+      /*+++++++++++++++++++++++script tendencia+++++++++++++++++++++++++++++++++++++*/
+      document.getElementById("id_tendencia").addEventListener("change", myFunction5);
+
+      function myFunction5() {
+        var x = document.getElementById("id_tendencia");
+        if(x.options[x.selectedIndex].text == "Otros"){
+          $("#tendencia").css("display", "block");
+        }else{
+          $("#tendencia").css("display", "none");
+          document.getElementById('id_textarea_tendencia').value = "";
+        }
+      }
       
