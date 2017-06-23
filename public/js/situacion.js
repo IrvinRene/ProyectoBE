@@ -17,7 +17,7 @@
 /*+++++++++++++++++++++++script sumatoria+++++++++++++++++++++++++++++++++++++++++++*/
     function sumar (valor) {
     var total = 0;
-    valor = parseFloat(valor); // Convertir el valor a un entero (número).
+    valor = parseFloat(valor); 
 
     total = document.getElementById('spTotal').innerHTML;
 
