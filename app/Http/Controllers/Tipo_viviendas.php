@@ -7,6 +7,7 @@ use App\Tipo_vivienda;
 use App\Zona_ub;
 use App\Material_pared;
 use App\Material_piso;
+use App\Num_personas;
 class Tipo_viviendas extends Controller
 {
     /**

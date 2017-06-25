@@ -5,6 +5,115 @@
   
   <form class="form-horizontal" role="form" method="POST" action="{{ url('tipo_viv')}}" >
       {{ csrf_field() }}
+
+      <div class="row">
+        <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
+          <div class="panel-heading"><h4><strong>Información de la vivienda</strong></h4></div>
+                    <div class="panel-heading"><h4><strong>Datos actuales de la vivienda permanente</strong></h4></div>
+
+            <div class="panel-body">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="vivienda" class="col-sm-5 control-label" >Número de personas que residen en la vivienda:</label>
+                  <div id= "personas" class="col-sm-6">
+                  {!! Form:: select('personas', App\Num_personas::pluck('cantidad'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'personas','id'=>'id_personas')) !!}
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="estatus" class="col-sm-5 control-label" >Estatus de la vivienda</label>
+                    <div class="col-sm-6">
+                       {!! Form:: select('estatus', App\Tendencia::pluck('tendencia'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'estatus', 'id'=>'id_estatus')) !!}
+                      <script src="/js/show.js"></script>
+                      <div class="form" id="estatus" style="display: none;">
+                      <label class="col-sm-2 control-label" >Especifíque</label>
+                      <textarea type="text" id="id_textarea_estatus" class="form-control" name="Descipcion" placeholder="Especifíque"></textarea>
+                    </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
+          <div class="panel-heading"><h4><strong>Distribución física de la vivienda</strong></h4></div>
+            <div class="panel-body">
+            <div class="col-sm-12">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="estatus" class="col-sm-4 control-label" >Sala</label>
+                  <div id= "personas" class="col-sm-8">
+                   {!! Form:: select('sala', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'sala')) !!}
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="estatus" class="col-sm-4 control-label" >Comedor</label>
+                    <div class="col-sm-8">
+                        {!! Form:: select('comedor', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'comedor')) !!}
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="salcomerdor" class="col-sm-4 control-label" >Sala comedor</label>
+                  <div id= "personas" class="col-sm-8">
+                   {!! Form:: select('sala', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'salcomedor')) !!}
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="estatus" class="col-sm-4 control-label" >Cocina</label>
+                    <div class="col-sm-8">
+                        {!! Form:: select('cocina', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'cocina')) !!}
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+          <div class="col-md-3">
+                <div class="form-group">
+                  <label for="estatus" class="col-sm-4 control-label" >Lavandería</label>
+                  <div id= "personas" class="col-sm-8">
+                   {!! Form:: select('lavanderia', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'lavanderia')) !!}
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="estatus" class="col-sm-5 control-label" >Cuarto de estudio</label>
+                    <div class="col-sm-7">
+                        {!! Form:: select('cestudio', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'cestudio')) !!}
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="salcomerdor" class="col-sm-4 control-label" >Terraza</label>
+                  <div id= "personas" class="col-sm-8">
+                   {!! Form:: select('sala', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'salcomedor')) !!}
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="estatus" class="col-sm-4 control-label" >Dormitorios Nº</label>
+                    <div class="col-sm-8">
+                        {!! Form:: select('ndormitorio', App\Dormitorio::pluck('numero'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'ndormitorio')) !!}
+                    </div>
+                </div>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+
       <div class="row">
         <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
           <div class="panel-heading"><h4><strong>Tipo de Vivienda</strong></h4></div>
@@ -134,7 +243,7 @@
                     <label for="vivienda" class="control-label" >Nº de Ventanas</label>
                 </div>
                   <div class="col-sm-6"> 
-                    <select class="form-control" name="num_ventana">
+                    <select class="form-control" name="num_ventana" >
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -409,6 +518,9 @@
       </div>
     </div>
     <div class="col-md-6">
+      
+
+    
     </div>
     </div>
     </div>
