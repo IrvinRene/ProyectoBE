@@ -1,5 +1,5 @@
 /*+++++++++++++++++++++++script residente+++++++++++++++++++++++++++++++++++++*/
-        
+
       document.getElementById("id_residente").addEventListener("change", myFunction5);
 
       function myFunction5() {
@@ -12,7 +12,7 @@
         }
       }
 /*+++++++++++++++++++++++script tipo  de vivienda+++++++++++++++++++++++++++++++++++++*/
-        
+
       document.getElementById("id_tipo").addEventListener("change", myFunction7);
 
       function myFunction7() {
@@ -22,5 +22,17 @@
         }else{
           $("#tipo_vivienda").css("display", "none");
           document.getElementById('id_textarea_tipo').value = "";
+        }
+      }
+      /*+++++++++++++++++++++++script area laboral+++++++++++++++++++++++++++++++++++++*/
+      document.getElementById("id_arlabo_ac").addEventListener("change", myFunction8);
+
+      function myFunction5() {
+        var x = document.getElementById("id_arlabo_ac");
+        if(x.options[x.selectedIndex].text == "Otros"){
+          $("#area_laboral").css("display", "block");
+        }else{
+          $("#area_laboral").css("display", "none");
+          document.getElementById('id_textarea_area_laboral').value = "";
         }
       }

@@ -21,7 +21,7 @@
    @yield('regnoticia')
 
    @yield('tipo_vivienda')
-
+   @yield('info_acad')
 
   @include('service_view.footer')
 </body>

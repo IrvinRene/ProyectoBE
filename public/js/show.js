@@ -73,4 +73,3 @@
           document.getElementById('id_textarea_tendencia').value = "";
         }
       }
-      
