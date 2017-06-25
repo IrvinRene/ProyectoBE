@@ -12,8 +12,8 @@ class Informacion_vivienda extends Model
      *
      * @var array
      */
-    
+    protected $table ='informacion_vivienda';
     protected $fillable = [
-        'tipo_vivienda_id_tipo_vivienda',
+        'tipo_vivienda_id_tipo_vivienda', 'zona_ub_id_zona_ub', 'id_mparedes', 'id_mpisos', 'id_mtecho',
     ];
 }

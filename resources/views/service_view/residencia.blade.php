@@ -9,10 +9,10 @@
         <div class="panel-heading"><h4><strong>Estudiantes que cambian de residencia por motivo de estudios</strong></h4></div>
         	<div class="panel-body">
         	  <div class="col-md-4">
-        		<div class="form-group">
+        		
         			<label class="control-label" >Dirección actual</label>
         			<textarea type="text" id="id_textarea_dactual" class="form-control" name="descripcion" placeholder="Especifíque"></textarea>
-        		</div>
+        		
         	  </div>
 
         	  <div class="col-md-4">

@@ -1,3 +1,16 @@
+ /*+++++++++++++++++++++++script estatus+++++++++++++++++++++++++++++++++++++*/
+      document.getElementById("id_estatus").addEventListener("change", myFunction6);
+
+      function myFunction6() {
+        var x = document.getElementById("id_estatus");
+        if(x.options[x.selectedIndex].text == "Otros"){
+          $("#estatus").css("display", "block");
+        }else{
+          $("#estatus").css("display", "none");
+          document.getElementById('id_textarea_estatus').value = "";
+        }
+      }
+
 /*+++++++++++++++++++++++script vivienda+++++++++++++++++++++++++++++++++++++++++++*/
       document.getElementById("id_d").addEventListener("change", myFunction);
 
@@ -61,4 +74,20 @@
         }
       }
 
+      /*+++++++++++++++++++++++script tendencia+++++++++++++++++++++++++++++++++++++*/
+      document.getElementById("id_tendencia").addEventListener("change", myFunction5);
+
+      function myFunction5() {
+        var x = document.getElementById("id_tendencia");
+        if(x.options[x.selectedIndex].text == "Otros"){
+          $("#tendencia").css("display", "block");
+        }else{
+          $("#tendencia").css("display", "none");
+          document.getElementById('id_textarea_tendencia').value = "";
+        }
+      }
+<<<<<<< HEAD
+     
       
+=======
+>>>>>>> ff01bbec70646b8b049992f5ffdc34ee75b8c6a1

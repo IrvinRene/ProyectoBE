@@ -16,8 +16,8 @@
 
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse navbar-right navbar-nav nav" id="bs-example-navbar-collapse-1">
-                  <li><a href="#" ><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-file"></span> Formulario</a></li>
+                  <li><a href="/home" ><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+                  <li><a href="/tipo_viv"><span class="glyphicon glyphicon-file"></span> Formulario</a></li>
                   <li><a href="#" ><span class="glyphicon glyphicon-stats"></span> Reportes</a></li>
                   <li><a href="#" ><span class="glyphicon glyphicon-plus"></span> Inscripción</a></li>
                   <li><a href="/regnoticia" ><span class="glyphicon glyphicon-plus"></span> Registrar Noticia</a></li>
