@@ -157,6 +157,30 @@
         </div>
         <div class="panel panel-info">
           <div class="panel-body">
+            <div class="col-md-12">
+              <h4><strong>Ingreso Familiar</strong> (Adjuntar imagen que compruebe los ingresos: (Talonario de cheque; si no trabaja carta de ingresos familiares))</h4>
+            </div>
+            <div class="col-md-8">
+              <div class="col-md-5">
+                <label class="control-label">Ingreso declarado en el cuadro familiar &nbsp;</label>
+              </div>
+              <div class="col-md-3 lsp">
+                <input type="money" id="viv" class="form-control" name="" placeholder="" onchange="sumar(this.value);" ></input>&nbsp; &nbsp; &nbsp;
+              </div>
+            </div>
+            <label class="control-label">Otros Ingresos &nbsp;</label>
+            <div class="col-md-8">
+              <div class="col-md-6">
+
+              </div>
+              <div class="col-md-4">
+                <label class="control-label">Vivienda &nbsp;</label><input type="money" id="viv" class="form-control" name="nombre_empresa" placeholder="" onchange="sumar(this.value);" ></input>&nbsp; &nbsp; &nbsp;
+              </div>
+            </div>
+
+
+              </div>
+            </div>
           </div>
         </div>
   </form>

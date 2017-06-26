@@ -1,3 +1,16 @@
+ /*+++++++++++++++++++++++script estatus+++++++++++++++++++++++++++++++++++++*/
+      document.getElementById("id_estatus").addEventListener("change", myFunction6);
+
+      function myFunction6() {
+        var x = document.getElementById("id_estatus");
+        if(x.options[x.selectedIndex].text == "Otros"){
+          $("#estatus").css("display", "block");
+        }else{
+          $("#estatus").css("display", "none");
+          document.getElementById('id_textarea_estatus').value = "";
+        }
+      }
+
 /*+++++++++++++++++++++++script vivienda+++++++++++++++++++++++++++++++++++++++++++*/
       document.getElementById("id_d").addEventListener("change", myFunction);
 
