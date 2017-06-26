@@ -17,6 +17,7 @@
  </head>
 <body>
    @include('service_view.nav')
+    
    @yield('situación_economica')
    @yield('regnoticia')
 

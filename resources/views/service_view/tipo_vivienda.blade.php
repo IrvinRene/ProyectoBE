@@ -113,7 +113,6 @@
         </div>
       </div>
 
-
       <div class="row">
         <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
           <div class="panel-heading"><h4><strong>Tipo de Vivienda</strong></h4></div>
