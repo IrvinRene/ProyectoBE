@@ -1,4 +1,4 @@
 @extends('layouts.marco')
-@section('info_acad')
+@section('datos_personales')
 
 @endsection

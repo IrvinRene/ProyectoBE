@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Facultad extends Model
+class Agno_ac extends Model
 {
-    protected $table= ('facultad');
+   protected  $table = ('agno_ac');
 }

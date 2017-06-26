@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class Info_Academica extends Controller
 {
     /**
@@ -13,7 +14,7 @@ class Info_Academica extends Controller
      */
     public function index()
     {
-        //
+        return view('info_academica');
     }
 
     /**
@@ -34,7 +35,9 @@ class Info_Academica extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $academica = new Info_academica();
+        $academica->aula_de_clases = $request->aula;
+        $academica->agno_de_ingreso = $request->ango_ing;
     }
 
     /**
