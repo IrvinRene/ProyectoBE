@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Datos_personales extends Controller
+class Aspecto_salud extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class Datos_personales extends Controller
      */
     public function index()
     {
-    return view('service_view.datos_personales');
+        return view('service_view.aspecto_salud');
     }
 
     /**
@@ -34,7 +34,7 @@ class Datos_personales extends Controller
      */
     public function store(Request $request)
     {
-      $datos_personales= new Datos_personales();
+      $aspecto_salud= new Aspecto_salud();
     }
 
     /**

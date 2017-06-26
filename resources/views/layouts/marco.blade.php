@@ -22,7 +22,8 @@
 
    @yield('tipo_vivienda')
    @yield('info_acad')
-
+   @yield('aspecto_salud')
+   @yield('datos_personales')
   @include('service_view.footer')
 </body>
 </html>

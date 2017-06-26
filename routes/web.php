@@ -37,3 +37,6 @@ Route::get('/regnoticia', 'Regnoticia@index');
 Route::post('/noticia', 'Regnoticia@store');
 
 Route::resource('/residencia', 'Residencia');
+Route::resource('/aspecto_salud', 'Aspecto_salud');
+
+Route::resource('/datos_personales', 'Datos_personales');

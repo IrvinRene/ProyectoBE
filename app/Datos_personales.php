@@ -13,7 +13,6 @@ class Datos_personales extends Model
      * @var array
      */
 
-    protected $fillable = [
-        'Datos_personales',
+    protected $table = ('datos_personales');
     ];
 }
