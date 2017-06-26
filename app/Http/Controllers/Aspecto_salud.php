@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Disciplina;
 
 class Aspecto_salud extends Controller
 {
@@ -34,7 +35,9 @@ class Aspecto_salud extends Controller
      */
     public function store(Request $request)
     {
-      $aspecto_salud= new Aspecto_salud();
+    
+      $aspecto_deportivo= new Disciplina();
+      $aspecto_salud->Enfermedad_impedimento = $request->Enfermedad_impedimento;
     }
 
     /**
@@ -68,7 +71,9 @@ class Aspecto_salud extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
+
     }
 
     /**
