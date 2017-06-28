@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Disciplina;
 
-class Datos_personales extends Controller
+class Aspecto_salud extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class Datos_personales extends Controller
      */
     public function index()
     {
-    return view('service_view.datos_personales');
+        return view('service_view.aspecto_salud');
     }
 
     /**
@@ -34,7 +35,9 @@ class Datos_personales extends Controller
      */
     public function store(Request $request)
     {
-      $datos_personales= new Datos_personales();
+    
+      $aspecto_deportivo= new Disciplina();
+      $aspecto_salud->Enfermedad_impedimento = $request->Enfermedad_impedimento;
     }
 
     /**
@@ -68,7 +71,9 @@ class Datos_personales extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
+
     }
 
     /**

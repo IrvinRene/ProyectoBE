@@ -17,12 +17,14 @@
  </head>
 <body>
    @include('service_view.nav')
+    
    @yield('situación_economica')
    @yield('regnoticia')
 
    @yield('tipo_vivienda')
    @yield('info_acad')
-
+   @yield('aspecto_salud')
+   @yield('datos_personales')
   @include('service_view.footer')
 </body>
 </html>

@@ -86,8 +86,3 @@
           document.getElementById('id_textarea_tendencia').value = "";
         }
       }
-<<<<<<< HEAD
-     
-      
-=======
->>>>>>> ff01bbec70646b8b049992f5ffdc34ee75b8c6a1
