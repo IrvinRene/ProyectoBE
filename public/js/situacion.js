@@ -17,7 +17,7 @@
 /*+++++++++++++++++++++++script sumatoria+++++++++++++++++++++++++++++++++++++++++++*/
     function sumar (valor) {
     var total = 0;
-    valor = parseFloat(valor); 
+    valor = parseFloat(valor); // Convertir el valor a un entero (número).
 
     total = document.getElementById('spTotal').innerHTML;
 
@@ -29,4 +29,27 @@
 
     // Colocar el resultado de la suma en el control "span".
     document.getElementById('spTotal').innerHTML = total;
+}
+
+/*+++++++++++++++++++++++script sumatoria2+++++++++++++++++++++++++++++++++++++++++++*/
+    function sumar2 (valor) {
+    var total = 0;
+    valor = parseFloat(valor); // Convertir el valor a un entero (número).
+
+    total = document.getElementById('sTotal').innerHTML;
+
+    // Aquí valido si hay un valor previo, si no hay datos, le pongo un cero "0".
+    total = (total == null || total == undefined || total == "") ? 0 : total;
+
+    /* Esta es la suma. */
+    total = (parseFloat(total) + parseFloat(valor));
+
+    // Colocar el resultado de la suma en el control "span".
+    document.getElementById('sTotal').innerHTML = total;
+}
+
+/*+++++++++++++++++++++++script caracteres+++++++++++++++++++++++++++++++++++++++++++*/
+fucntion chars(event){
+  if (event.keycode <65 && even.keycode >90)
+  even.keycode =0;
 }

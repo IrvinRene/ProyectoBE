@@ -48,6 +48,11 @@ return [
           'root' => public_path('imgnoticia'),
       ],
 
+      'imgnoticia' => [
+          'driver' => 'local',
+          'root' => public_path('imgdocument'),
+      ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

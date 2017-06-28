@@ -12,7 +12,7 @@
               <div class="col-md-6">
                   <div class="form-group">
                       <label  class="col-md-3 control-label" >¿Usted Trabaja?</label>
-                      <div id= "economico" class="col-sm-4">
+                      <div id= "economico" class="col-md-3">
                         <select name="id_decision" class="form-control" id='id_decision'>
                           <option value="0" disabled selected>--Seleccionar--</option>
                           @foreach($decisions as $decision)
@@ -57,7 +57,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                      <label  class="col-md-4 control-label" >Condición de Trabajo</label>
+                      <label  class="col-sm-3 control-label" >Condición de Trabajo</label>
                       <div id= "economico" class="col-sm-4">
                         <select name="id_decision3" class="form-control" id='id_decision3'>
                           <option value="0" disabled selected>--Seleccionar--</option>
@@ -85,7 +85,7 @@
                 <h4><strong>Financiamiento de Estudios</strong></h4>
                 @foreach($recursos as $recurso)
                   <input type="checkbox" name="recurso" value={{$recurso->id_recurso}}">{{$recurso->recurso}}</input><br>
-                @endforeach
+                @endforeach\
               </div>
               <div class="col-md-6">
                 <h4><strong>¿Cuál es el promedio mensual de ingresos que recibe para financiar sus estudios?</strong></h4>
@@ -93,14 +93,13 @@
               </div>
           </div>
         </div>
-        <div class="panel panel-info">
           <div class="panel-body">
             <h4><strong>Gasto Familiar Aproximado</strong></h4>
             <div class="col-md-3">
-              <label class="control-label">Vivienda &nbsp;</label><input type="money" id="viv" class="form-control" name="nombre_empresa" placeholder="" onchange="sumar(this.value);" ></input>&nbsp; &nbsp; &nbsp;
+              <label class="control-label">Vivienda &nbsp;</label><input type="number" id="viv" class="form-control" name="nombre_empresa" placeholder="" onchange="sumar(this.value);" ></input>&nbsp; &nbsp; &nbsp;
             </div>
             <div class="col-md-3">
-              <label class="control-label">Alimentación &nbsp; </label><input type="money" id="1" class="form-control" name="nombre_empresa" placeholder="" onchange="sumar(this.value);" ></input>&nbsp; &nbsp; &nbsp;
+              <label class="control-label">Alimentación &nbsp; </label><input type="number" id="1" class="form-control" name="nombre_empresa" placeholder="" onchange="sumar(this.value);" ></input>&nbsp; &nbsp; &nbsp;
             </div>
             <div class="col-md-3">
               <label class="control-label">Transporte &nbsp; </label><input type="number" id="2" class="form-control" name="nombre_empresa" placeholder="" onchange="sumar(this.value);" ></input>&nbsp; &nbsp; &nbsp;
@@ -160,29 +159,78 @@
             <div class="col-md-12">
               <h4><strong>Ingreso Familiar</strong> (Adjuntar imagen que compruebe los ingresos: (Talonario de cheque; si no trabaja carta de ingresos familiares))</h4>
             </div>
-            <div class="col-md-8">
-              <div class="col-md-5">
-                <label class="control-label">Ingreso declarado en el cuadro familiar &nbsp;</label>
-              </div>
-              <div class="col-md-3 lsp">
-                <input type="money" id="viv" class="form-control" name="" placeholder="" onchange="sumar(this.value);" ></input>&nbsp; &nbsp; &nbsp;
-              </div>
-            </div>
-            <label class="control-label">Otros Ingresos &nbsp;</label>
-            <div class="col-md-8">
+            <div class="col-md-12">
               <div class="col-md-6">
-
-              </div>
-              <div class="col-md-4">
-                <label class="control-label">Vivienda &nbsp;</label><input type="money" id="viv" class="form-control" name="nombre_empresa" placeholder="" onchange="sumar(this.value);" ></input>&nbsp; &nbsp; &nbsp;
-              </div>
+                <div class="row">
+                    <label class="control-label col-sm-6">Ingreso declarado en el cuadro familiar &nbsp;</label>
+                  <div class="col-sm-3">
+                    <input type="money" class="form-control" name="" placeholder="" onchange="sumar2(this.value);chars(event)" ></input>&nbsp; &nbsp; &nbsp;
+                  </div>
+                  <div class="col-sm-8">
+                    <label class="control-label">Otros Ingresos: &nbsp;</label>
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="control-label col-xs-offset-4">Beca &nbsp;</label>
+                  </div>
+                  <div class="col-sm-3">
+                    <input type="money"  class="form-control" name="" placeholder="" onchange="sumar2(this.value);"></input>&nbsp; &nbsp; &nbsp;
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="control-label col-xs-offset-4">Préstamo de estudios &nbsp;</label>
+                  </div>
+                  <div class="col-sm-3">
+                    <input type="money" class="form-control" name="" placeholder="" onchange="sumar2(this.value);" ></input>&nbsp; &nbsp; &nbsp;
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="control-label col-xs-offset-4">Pensión Alimenticia &nbsp;</label>
+                  </div>
+                  <div class="col-sm-3">
+                    <input type="money" class="form-control" name="" placeholder="" onchange="sumar2(this.value);" ></input>&nbsp; &nbsp; &nbsp;
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="control-label col-xs-offset-4">Otros &nbsp;</label>
+                  </div>
+                  <div class="col-sm-3">
+                    <input type="money" class="form-control" name="" placeholder="" onchange="sumar2(this.value);"></input>&nbsp; &nbsp; &nbsp;<br><br><br>
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="col-xs-offset-4"><strong>Total de Ingresos &nbsp;</strong></label>
+                  </div>
+                  <div class="col-sm-3">
+                    <strong><label class="col-xs-offset-3" style="color: red;" id="sTotal"></label></strong>
+                  </div>
+                  </div>
+                </div>
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-sm-8" id="adjuntar">
+                      @if(session()->has('msj'))
+                      <div class="alert alert-success">{{session ('msj')}}</div>
+                      @endif
+                      @if(session()->has('errormsj'))
+                      <div class="alert alert-success">Error al guardar los datos</div>
+                      @endif
+                  <form role="form" method="post" action="{{ url('economics')}}" enctype="multipart/form-data">
+                  {{ csrf_field() }}
+                    <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                      <textarea type="text" class="form-control" name="descripcion" placeholder="descripcion de lo englobado en otros ingresos"></textarea>
+                        @if($errors->has('descripcion'))
+                        <span style="color:red;">{{$errors->first('descripcion')}}</span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                      <label for="urlimgnot">Adjuntar imagen (comprobante de ingresos)</label>
+                      <input type="file" id="urlimgnott">
+                    </div>
+                      <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
             </div>
-
-
-              </div>
             </div>
           </div>
         </div>
+      </div>
   </form>
 </div>
 
