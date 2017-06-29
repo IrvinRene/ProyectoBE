@@ -49,7 +49,3 @@
 }
 
 /*+++++++++++++++++++++++script caracteres+++++++++++++++++++++++++++++++++++++++++++*/
-fucntion chars(event){
-  if (event.keycode <65 && even.keycode >90)
-  even.keycode =0;
-}

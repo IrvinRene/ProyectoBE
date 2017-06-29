@@ -5,26 +5,23 @@
 
   <form class="form-horizontal" role="form" method="POST" action="{{ url('form')}}" >
       {{ csrf_field() }}
-      <div class="row">
-          <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
-            <div class="panel-heading"><h4><strong>3. Situación Económica</strong></h4></div>
-            <div class="panel-body">
-              <div class="col-md-6">
-                  <div class="form-group">
-                      <label  class="col-md-3 control-label" >¿Usted Trabaja?</label>
-                      <div id= "economico" class="col-md-3">
-                        <select name="id_decision" class="form-control" id='id_decision'>
-                          <option value="0" disabled selected>--Seleccionar--</option>
-                          @foreach($decisions as $decision)
-                            <option value="{{$decision->id_decision}}">{{$decision->decision}}</option>
-                          @endforeach
-                        </select>
-                      <script src="/js/situacion.js"></script>
-                      </div>
-                  </div>
+        <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
+          <div class="panel-heading"><h4><strong>3. Situación Económica</strong></h4></div>
+          <div class="panel-body">
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label  class="col-md-4 control-label" >¿Usted Trabaja?</label>
+                    <div id= "economico" class="col-sm-4">
+                      <select name="id_decision" class="form-control" id='id_decision'>
+                        <option value="0" disabled selected>--Seleccionar--</option>
+                        @foreach($decisions as $decision)
+                          <option value="{{$decision->id_decision}}">{{$decision->decision}}</option>
+                        @endforeach
+                      </select>
+                    <script src="/js/situacion.js"></script>
+                    </div>
+                </div>
               </div>
-
-            <div  class="row">
               <div class="col-md-12" id="div_trabajo" style="display: none;">
                   <div class="col-md-3">
                     <label class="control-label">Nombre de la Empresa &nbsp;</label><input type="text" id="id_nombre_empresa" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
@@ -39,10 +36,10 @@
                     <label class="control-label">Teléfono&nbsp; </label><input type="text" id="id_nombre_telefono" class="form-control" name="nombre_empresa" placeholder=""></input>&nbsp; &nbsp; &nbsp;
                 </div>
               </div>
-            </div>
-            <div class="row">
+
               <div class="col-md-12" id="div_ddtrabajo" style="display: none;">
                 <div class="col-md-6">
+                <div class="row">
                   <div class="form-group">
                       <label  class="col-md-3 control-label" text-align="left" >Tipo de Trabajo</label>
                       <div id= "economico" class="col-sm-4">
@@ -55,37 +52,36 @@
                       </div>
                   </div>
                 </div>
+                </div>
                 <div class="col-md-6">
-                  <div class="form-group">
-                      <label  class="col-sm-3 control-label" >Condición de Trabajo</label>
-                      <div id= "economico" class="col-sm-4">
-                        <select name="id_decision3" class="form-control" id='id_decision3'>
-                          <option value="0" disabled selected>--Seleccionar--</option>
-                          @foreach($condicions as $condicion)
-                            <option value="{{$condicion->id_condicion}}">{{$condicion->condicion}}</option>
-                          @endforeach
-                        </select>
-                      </div>
-                  </div>
+                  <div class="row">
+                    <div class="form-group">
+                        <label  class="col-sm-3 control-label" >Condición de Trabajo</label>
+                        <div id= "economico" class="col-sm-4">
+                          <select name="id_decision3" class="form-control" id='id_decision3'>
+                            <option value="0" disabled selected>--Seleccionar--</option>
+                            @foreach($condicions as $condicion)
+                              <option value="{{$condicion->id_condicion}}">{{$condicion->condicion}}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                    </div>
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-12" id="div_dtrabajo" style="display: none;">
-                  <div class="col-md-6">
-                    <label class="control-label col-sm-3" text-align="left">¿Porqué no? &nbsp;</label><textarea type="text" id="id_porque_no" class="form-control" name="porque_no" placeholder="Especifique"></textarea>&nbsp; &nbsp; &nbsp;
-                  </div>
+            <div  id="div_dtrabajo" style="display: none;">
+              <div class="col-md-6">
+                <label class="control-label col-sm-3" text-align="left">¿Porqué no? &nbsp;</label><textarea type="text" id="id_porque_no" class="form-control" name="porque_no" placeholder="Especifique"></textarea>&nbsp; &nbsp; &nbsp;
               </div>
             </div>
-        </div>
-        </div>
+          </div>
         <div class="panel panel-info">
           <div class="panel-body">
               <div class="col-md-6">
                 <h4><strong>Financiamiento de Estudios</strong></h4>
                 @foreach($recursos as $recurso)
                   <input type="checkbox" name="recurso" value={{$recurso->id_recurso}}">{{$recurso->recurso}}</input><br>
-                @endforeach\
+                @endforeach
               </div>
               <div class="col-md-6">
                 <h4><strong>¿Cuál es el promedio mensual de ingresos que recibe para financiar sus estudios?</strong></h4>
@@ -93,6 +89,7 @@
               </div>
           </div>
         </div>
+        <div class="panel panel-info">
           <div class="panel-body">
             <h4><strong>Gasto Familiar Aproximado</strong></h4>
             <div class="col-md-3">
@@ -154,6 +151,7 @@
             </div>
           </div>
         </div>
+
         <div class="panel panel-info">
           <div class="panel-body">
             <div class="col-md-12">
@@ -164,7 +162,7 @@
                 <div class="row">
                     <label class="control-label col-sm-6">Ingreso declarado en el cuadro familiar &nbsp;</label>
                   <div class="col-sm-3">
-                    <input type="money" class="form-control" name="" placeholder="" onchange="sumar2(this.value);chars(event)" ></input>&nbsp; &nbsp; &nbsp;
+                    <input type="number" class="form-control" name="" placeholder="" onchange="sumar2(this.value);chars(event)" ></input>&nbsp; &nbsp; &nbsp;
                   </div>
                   <div class="col-sm-8">
                     <label class="control-label">Otros Ingresos: &nbsp;</label>
@@ -173,31 +171,31 @@
                     <label class="control-label col-xs-offset-4">Beca &nbsp;</label>
                   </div>
                   <div class="col-sm-3">
-                    <input type="money"  class="form-control" name="" placeholder="" onchange="sumar2(this.value);"></input>&nbsp; &nbsp; &nbsp;
+                    <input type="number"  class="form-control" name="" placeholder="" onchange="sumar2(this.value);"></input>&nbsp; &nbsp; &nbsp;
                   </div>
                   <div class="col-sm-6">
                     <label class="control-label col-xs-offset-4">Préstamo de estudios &nbsp;</label>
                   </div>
                   <div class="col-sm-3">
-                    <input type="money" class="form-control" name="" placeholder="" onchange="sumar2(this.value);" ></input>&nbsp; &nbsp; &nbsp;
+                    <input type="number" class="form-control" name="" placeholder="" onchange="sumar2(this.value);" ></input>&nbsp; &nbsp; &nbsp;
                   </div>
                   <div class="col-sm-6">
                     <label class="control-label col-xs-offset-4">Pensión Alimenticia &nbsp;</label>
                   </div>
                   <div class="col-sm-3">
-                    <input type="money" class="form-control" name="" placeholder="" onchange="sumar2(this.value);" ></input>&nbsp; &nbsp; &nbsp;
+                    <input type="number" class="form-control" name="" placeholder="" onchange="sumar2(this.value);" ></input>&nbsp; &nbsp; &nbsp;
                   </div>
                   <div class="col-sm-6">
                     <label class="control-label col-xs-offset-4">Otros &nbsp;</label>
                   </div>
                   <div class="col-sm-3">
-                    <input type="money" class="form-control" name="" placeholder="" onchange="sumar2(this.value);"></input>&nbsp; &nbsp; &nbsp;<br><br><br>
+                    <input type="number" class="form-control" name="" placeholder="" onchange="sumar2(this.value);"></input>&nbsp; &nbsp; &nbsp;<br><br><br>
                   </div>
                   <div class="col-sm-6">
                     <label class="col-xs-offset-4"><strong>Total de Ingresos &nbsp;</strong></label>
                   </div>
                   <div class="col-sm-3">
-                    <strong><label class="col-xs-offset-3" style="color: red;" id="sTotal"></label></strong>
+                    <strong><label class="col-xs-offset-3" style="color: red;" id="sTotal"></label></strong><br><br><br>
                   </div>
                   </div>
                 </div>
@@ -226,12 +224,19 @@
                       <button type="submit" class="btn btn-primary">Enviar</button>
                     </form>
                 </div>
+              </div>
             </div>
+            <div class="col-md-12">
+              <h4><strong>Comentarios Adicionales</strong> (sobre el Gasto e Ingreso Familiar)</h4>
             </div>
           </div>
+
         </div>
       </div>
   </form>
 </div>
+</div>
+</div>
+
 
 @endsection
