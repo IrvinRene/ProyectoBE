@@ -26,7 +26,7 @@
         }
       }
       /*+++++++++++++++++++++++script area laboral+++++++++++++++++++++++++++++++++++++*/
-      document.getElementById("id_arlabo_ac").addEventListener("change", myFunction8);
+    /*  document.getElementById("id_arlabo_ac").addEventListener("change", myFunction8);
 
       function myFunction5() {
         var x = document.getElementById("id_arlabo_ac");
