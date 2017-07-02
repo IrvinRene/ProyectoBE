@@ -1,10 +1,6 @@
-@extends('layouts.marco')
-@section('aspecto_salud')
-
-<div class="container">
-
-  <form class="form-horizontal" role="form" method="POST" action="{{ url('aspecto_salud')}}" >
+<form class="form-horizontal" role="form" method="POST" action="{{ url('aspecto_salud')}}" >
       {{ csrf_field() }}
+
       <div class="row">
         <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
           <div class="panel-heading"><h4><strong>Aspecto salud</strong></h4></div>
@@ -42,6 +38,8 @@
               </div>
           </div>
       </div>
+    </div>
+  </div>
 
       <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
         <div class="panel-heading"><h4><strong>Aspecto Deportivos</strong></h4></div>
@@ -158,8 +156,3 @@
 
   </div>
 </form>
-</div>
-
-
-
-@endsection

@@ -1,19 +1,20 @@
-@extends('layouts.marco')
-@section('tipo_vivienda')
-
-<div class="container">
-  
   <form class="form-horizontal" role="form" method="POST" action="{{ url('tipo_viv')}}" >
       {{ csrf_field() }}
 
       <div class="row">
         <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
           <div class="panel-heading"><h4><strong>Información de la vivienda</strong></h4></div>
-                    <div class="panel-heading"><h4><strong>Datos actuales de la vivienda permanente</strong></h4></div>
+
 
             <div class="panel-body">
+              <div class="col-md-12">
+                <div class="form-group">
+                <h4><strong>Datos actuales de la vivienda permanente</strong></h4>
+              </div>
+              </div>
               <div class="col-md-6">
                 <div class="form-group">
+
                   <label for="vivienda" class="col-sm-5 control-label" >Número de personas que residen en la vivienda:</label>
                   <div id= "personas" class="col-sm-6">
                   {!! Form:: select('personas', App\Num_personas::pluck('cantidad'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'personas','id'=>'id_personas')) !!}
@@ -33,83 +34,85 @@
                     </div>
                 </div>
               </div>
-            </div>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
-          <div class="panel-heading"><h4><strong>Distribución física de la vivienda</strong></h4></div>
-            <div class="panel-body">
-            <div class="col-sm-12">
-              <div class="col-md-3">
+              <div class="col-md-12">
                 <div class="form-group">
-                  <label for="estatus" class="col-sm-4 control-label" >Sala</label>
-                  <div id= "personas" class="col-sm-8">
-                   {!! Form:: select('sala', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'sala')) !!}
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="estatus" class="col-sm-4 control-label" >Comedor</label>
-                    <div class="col-sm-8">
-                        {!! Form:: select('comedor', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'comedor')) !!}
-                    </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="salcomerdor" class="col-sm-4 control-label" >Sala comedor</label>
-                  <div id= "personas" class="col-sm-8">
-                   {!! Form:: select('sala', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'salcomedor')) !!}
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="estatus" class="col-sm-4 control-label" >Cocina</label>
-                    <div class="col-sm-8">
-                        {!! Form:: select('cocina', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'cocina')) !!}
-                    </div>
-                </div>
+                <h4><strong>Distribución física de la vivienda</strong></h4>
               </div>
             </div>
-            <div class="col-sm-12">
-          <div class="col-md-3">
-                <div class="form-group">
-                  <label for="estatus" class="col-sm-4 control-label" >Lavandería</label>
-                  <div id= "personas" class="col-sm-8">
-                   {!! Form:: select('lavanderia', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'lavanderia')) !!}
+              <div class="col-sm-12">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="estatus" class="col-sm-4 control-label" >Sala</label>
+                    <div id= "personas" class="col-sm-8">
+                     {!! Form:: select('sala', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'sala')) !!}
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="estatus" class="col-sm-4 control-label" >Comedor</label>
+                      <div class="col-sm-8">
+                          {!! Form:: select('comedor', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'comedor')) !!}
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="salcomerdor" class="col-sm-4 control-label" >Sala comedor</label>
+                    <div id= "personas" class="col-sm-8">
+                     {!! Form:: select('sala', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'salcomedor')) !!}
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="estatus" class="col-sm-4 control-label" >Cocina</label>
+                      <div class="col-sm-8">
+                          {!! Form:: select('cocina', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'cocina')) !!}
+                      </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="estatus" class="col-sm-5 control-label" >Cuarto de estudio</label>
-                    <div class="col-sm-7">
-                        {!! Form:: select('cestudio', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'cestudio')) !!}
+
+              <div class="col-sm-12">
+            <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="estatus" class="col-sm-4 control-label" >Lavandería</label>
+                    <div id= "personas" class="col-sm-8">
+                     {!! Form:: select('lavanderia', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'lavanderia')) !!}
                     </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="salcomerdor" class="col-sm-4 control-label" >Terraza</label>
-                  <div id= "personas" class="col-sm-8">
-                   {!! Form:: select('sala', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'salcomedor')) !!}
                   </div>
                 </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="estatus" class="col-sm-4 control-label" >Dormitorios Nº</label>
-                    <div class="col-sm-8">
-                        {!! Form:: select('ndormitorio', App\Dormitorio::pluck('numero'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'ndormitorio')) !!}
-                    </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="estatus" class="col-sm-5 control-label" >Cuarto de estudio</label>
+                      <div class="col-sm-7">
+                          {!! Form:: select('cestudio', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'cestudio')) !!}
+                      </div>
+                  </div>
                 </div>
-              </div>
-          </div>
-          </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="salcomerdor" class="col-sm-4 control-label" >Terraza</label>
+                    <div id= "personas" class="col-sm-8">
+                     {!! Form:: select('sala', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'salcomedor')) !!}
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="estatus" class="col-sm-4 control-label" >Dormitorios Nº</label>
+                      <div class="col-sm-8">
+                          {!! Form:: select('ndormitorio', App\Dormitorio::pluck('numero'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'ndormitorio')) !!}
+                      </div>
+                  </div>
+                </div>
+            </div>
+
+
+
+            </div>
         </div>
       </div>
 
@@ -138,15 +141,12 @@
                     </div>
                 </div>
               </div>
-            </div>
-        </div>
-      </div>
 
-
-    <div class="row">
-        <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
-          <div class="panel-heading1"><h4><strong>Materiales de Construcción</strong></h4></div>
-            <div class="panel-body">
+              <div class="col-md-12">
+                <div class="form-group">
+                <h4><strong>Materiales de construcción</strong></h4>
+              </div>
+              </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="vivienda" class="col-sm-2 control-label" >Paredes</label>
@@ -170,7 +170,7 @@
                         <label class="col-sm-2 control-label" >Especifíque</label>
                         <textarea type="text" id="id_textarea_piso" class="form-control" name="descripcion2" placeholder="Especifíque"></textarea>
                        </div>
-                    </div>           
+                    </div>
                 </div>
               </div>
               <div class="col-md-4">
@@ -183,33 +183,32 @@
                           <label class="col-sm-2 control-label" >Especifíque</label>
                           <textarea type="text" id="id_textarea_zinc" class="form-control" name="descripcion3" placeholder="Especifíque"></textarea>
                         </div>
-                    </div> 
+                    </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>  
 
-        <div class="row">
-        <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
-          <div class="panel-heading"><h4><strong>La vivienda es:</strong></h4></div>
-            <div class="panel-body">
+
+              <div class="col-md-12">
+                <div class="form-group">
+                <h4><strong>La vivienda es:</strong></h4>
+              </div>
+              </div>
               <div class="col-md-4">
-                <div class="form-group"> 
+                <div class="form-group">
                   <div class="col-sm-6">
                     <label for="vivienda" class="col-sm-2 control-label" >Tamaño</label>
                   </div>
-                    <div class="col-sm-6"> 
+                    <div class="col-sm-6">
                       {!! Form:: select('tamagno_vivienda', App\Tamagno_vivienda::pluck('tamagno_vivienda'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'tamagno_vivienda')) !!}
                     </div>
                 </div>
               </div>
               <div class="col-md-4">
-                <div class="form-group"> 
+                <div class="form-group">
                   <div class="col-sm-6">
                     <label for="vivienda" class="col-sm-2 control-label" >Iluminación</label>
-                  </div> 
-                    <div class="col-sm-6">  
+                  </div>
+                    <div class="col-sm-6">
                       {!! Form:: select('material_techo', App\Iluminacion::pluck('tipo_iluminacion'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'iluminacion_vivienda', 'id'=>'id_ilum')) !!}
                       <script src="/js/show.js"></script>
                         <div class="form" id="ilum" style="display: none;">
@@ -220,71 +219,77 @@
                 </div>
               </div>
               <div class="col-md-4">
-                <div class="form-group"> 
+                <div class="form-group">
                   <div class="col-sm-6">
                     <label for="vivienda" class="col-sm-2 control-label" >Instalaciones sanitarias</label>
                   </div>
-                    <div class="col-sm-6"> 
+                    <div class="col-sm-6">
                       {!! Form:: select('Insta_sanitaria', App\Insta_sanitaria::pluck('Insta_sanitaria'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'insta_sanitaria_vivienda')) !!}
                     </div>
                 </div>
               </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <div class="col-sm-6">
+                      <label for="vivienda" class="control-label" >Nº de Ventanas</label>
+                  </div>
+                    <div class="col-sm-6">
+                      <select class="form-control" name="num_ventana" >
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                      </select>
+                    </div>
+                </div>
+              </div>
+              <div class="  col-md-4">
+                <div class="form-group">
+                  <div class="col-sm-6">
+                   <label for="vivienda" class="control-label" >Suministro de agua</label>
+                  </div>
+                  <div class="col-sm-6">
+                    {!! Form:: select('suminis_agua', App\Suminis_agua::pluck('suminis_agua'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'suminis_agua')) !!}
+                  </div>
+                </div>
+              </div>
+              <div class="  col-md-4">
+                <div class="form-group">
+                  <div class="col-sm-6">
+                   <label for="vivienda" class="control-label" >De dónde proviene</label>
+                  </div>
+                  <div class="col-sm-6">
+                    {!! Form:: select('prov_agua', App\Prov_agua::pluck('prov_agua'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'prov_agua')) !!}
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+
+
+        <div class="row">
+        <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
+          <div class="panel-heading"><h4><strong>La vivienda es:</strong></h4></div>
+            <div class="panel-body">
+
             </div>
           </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
-          <div class="panel-body">
-            <div class="col-md-4">
-              <div class="form-group"> 
-                <div class="col-sm-6">
-                    <label for="vivienda" class="control-label" >Nº de Ventanas</label>
-                </div>
-                  <div class="col-sm-6"> 
-                    <select class="form-control" name="num_ventana" >
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                      <option>10</option>
-                      <option>11</option>
-                      <option>12</option>
-                      <option>13</option>
-                      <option>14</option>
-                      <option>15</option>
-                    </select>
-                  </div>
-              </div>
-            </div>
-            <div class="  col-md-4">
-              <div class="form-group"> 
-                <div class="col-sm-6">
-                 <label for="vivienda" class="control-label" >Suministro de agua</label>
-                </div>
-                <div class="col-sm-6"> 
-                  {!! Form:: select('suminis_agua', App\Suminis_agua::pluck('suminis_agua'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'suminis_agua')) !!}
-                </div>
-              </div>
-            </div>
-            <div class="  col-md-4">
-              <div class="form-group"> 
-                <div class="col-sm-6">
-                 <label for="vivienda" class="control-label" >De dónde proviene</label>
-                </div>
-                <div class="col-sm-6"> 
-                  {!! Form:: select('prov_agua', App\Prov_agua::pluck('prov_agua'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'prov_agua')) !!}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       <div class="row">
         <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
@@ -293,7 +298,7 @@
               <div class="col-md-12">
                 <textarea type="text" id="id_textarea_condicion" class="form-control" name="condiciones" placeholder="Describa las condiciones en las que se encuentra la vivineda..."></textarea>
               </div>
-              
+
             </div>
         </div>
       </div>
@@ -302,6 +307,7 @@
         <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
           <div class="panel-heading"><h4><strong>Eqiupo y mobiliario con que cuenta su hogar</h4></strong></h4></div>
             <div class="panel-body">
+              <div class="form-group">
               <div class="col-md-3">
                 <div class="col-sm-6">
                  <label for="vivienda" class="control-label" >Juego de sala</label>
@@ -327,20 +333,15 @@
                 </div>
               </div>
               <div class="col-md-3">
-              <div class="col-sm-6">
-                 <label for="vivienda" class="control-label" >DVD</label>
+                <div class="col-sm-6">
+                   <label for="vivienda" class="control-label" >DVD</label>
                 </div>
                 <div class="col-sm-6">
-                  {!! Form:: select('dvd', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'dvd')) !!}
+                    {!! Form:: select('dvd', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'dvd')) !!}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-      <div class="row">
-        <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
-          <div class="panel-body">
+              </div>
+              <div class="form-group">
             <div class="col-md-3">
               <div class="col-sm-6  ">
                <label for="vivienda" class="control-label" >Componente</label>
@@ -374,59 +375,60 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-       <div class="row">
-        <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
-          <div class="panel-body">
-            <div class="col-md-3">
-              <div class="col-sm-6">
-               <label for="vivienda" class="control-label" >Micro Onda</label>
-              </div>
-              <div class="col-sm-6">
-                {!! Form:: select('micro', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'micro')) !!}
-              </div>
-            </div>
-            <div class="col-md-3">
-            <div class="col-sm-6">
-               <label for="vivienda" class="control-label" >Lavadora</label>
-              </div>
-              <div class="col-sm-6">
-                {!! Form:: select('lavadora', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'lavadora')) !!}
-              </div>
-            </div>
-            <div class="col-md-3">
-            <div class="col-sm-6">
-               <label for="vivienda" class="control-label" >Abanico</label>
-              </div>
-              <div class="col-sm-6">
-                {!! Form:: select('abanico', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'abanico')) !!}
-              </div>
-            </div>
-            <div class="col-md-3">
-            <div class="col-sm-6">
-               <label for="vivienda" class="control-label" >Otros</label>
-              </div>
-              <div class="col-sm-6">
-                 <div class="form" id="ilum" style="display: block;">
-                      <textarea type="text" id="id_textarea_ilum" class="form-control" name="otros_mob" placeholder="Especifíque"></textarea>
-                    </div>
-              </div>
+          <div class="form-group">
+        <div class="col-md-3">
+          <div class="col-sm-6">
+           <label for="vivienda" class="control-label" >Micro Onda</label>
+          </div>
+          <div class="col-sm-6">
+            {!! Form:: select('micro', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'micro')) !!}
+          </div>
+        </div>
+        <div class="col-md-3">
+        <div class="col-sm-6">
+           <label for="vivienda" class="control-label" >Lavadora</label>
+          </div>
+          <div class="col-sm-6">
+            {!! Form:: select('lavadora', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'lavadora')) !!}
+          </div>
+        </div>
+        <div class="col-md-3">
+        <div class="col-sm-6">
+           <label for="vivienda" class="control-label" >Abanico</label>
+          </div>
+          <div class="col-sm-6">
+            {!! Form:: select('abanico', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'abanico')) !!}
+          </div>
+        </div>
+        <div class="col-md-3">
+        <div class="col-sm-6">
+           <label for="vivienda" class="control-label" >Otros</label>
+          </div>
+          <div class="col-sm-6">
+             <div class="form" id="ilum" style="display: block;">
+                  <textarea type="text" id="id_textarea_ilum" class="form-control" name="otros_mob" placeholder="Especifíque"></textarea>
             </div>
           </div>
         </div>
-      </div><br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
 
       <div class="row">
       <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
         <div class="panel-heading"><h4><strong>Estudiantes que cambian de residencia por motivo de estudios</strong></h4></div>
           <div class="panel-body">
             <div class="col-md-4">
-            
+
               <label class="control-label" >Dirección actual</label>
               <textarea type="text" id="id_textarea_dactual" class="form-control" name="dire_actual" placeholder="Especifíque"></textarea>
-            
+
             </div>
 
             <div class="col-md-4">
@@ -446,12 +448,12 @@
       <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
           <div class="panel-body">
           <div class="col-md-3">
-                  <label for="condiciones" >¿Cambió de residencia por motivos de estudios?</label>            
+                  <label for="condiciones" >¿Cambió de residencia por motivos de estudios?</label>
                       {!! Form:: select('cambio', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'cambio', 'id'=>'id_cambio')) !!}
                       <script src="/js/show.js"></script>
-                       
-                
-                
+
+
+
               </div>
             <div class="col-md-3">
                 <div class="form-group">
@@ -478,7 +480,7 @@
                           <label class="col-sm-2 control-label" >Especifíque</label>
                           <textarea type="text" id="id_textarea_tipo" class="form-control" name="descripcion" placeholder="Especifíque"></textarea>
                         </div>
-                    </div> 
+                    </div>
                 </div>
               </div>
 
@@ -496,14 +498,14 @@
                       <label class="col-sm-2 control-label" >Especifíque</label>
                       <textarea type="text" id="id_textarea_tendencia" class="form-control" name="Descipcion" placeholder="Especifíque"></textarea>
                     </div>
-                    </div> 
+                    </div>
                 </div>
               </div>
 
 
 
-              
-      </div>    
+
+      </div>
     </div>
     <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
     <div class="col-md-6">
@@ -517,9 +519,9 @@
       </div>
     </div>
     <div class="col-md-6">
-      
 
-    
+
+
     </div>
     </div>
     </div>
@@ -528,7 +530,7 @@
       <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
         <div class="panel-heading"><h4><strong>Condiciones físicas de la vivienda, descríbalas:</strong></h4></div>
           <div class="panel-body">
-            <div class="form-group panel-heading" >             
+            <div class="form-group panel-heading" >
             <textarea type="text" id="id_textarea_dactual" class="form-control" name="con_fic_viv" placeholder="Especifíque"  rows="4"></textarea>
             </div>
             </div>
@@ -539,7 +541,7 @@
       <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
         <div class="panel-heading"><h4><strong>Otras facilidades</strong></h4></div>
           <div class="panel-body">
-            <div class="form-group panel-heading" >             
+            <div class="form-group panel-heading" >
             <textarea type="text" id="id_textarea_facilidad" class="form-control" name="otra_fac" placeholder="Especifíque"  rows="4"></textarea>
             </div>
             </div>
@@ -549,21 +551,14 @@
       <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
         <div class="panel-heading"><h4><strong>Comentarios adicionales</strong></h4></div>
           <div class="panel-body">
-            <div class="form-group panel-heading" >             
+            <div class="form-group panel-heading" >
             <textarea type="text" id="id_textarea_comentarios" class="form-control" name="com_adic" placeholder="Especifíque"  rows="4"></textarea>
             </div>
             </div>
           </div>
       </div>
 
- <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-primary"> Crear </button>
-      </div>
-    </div>
 
-    
+
+
   </form>
-</div>
-
-@endsection

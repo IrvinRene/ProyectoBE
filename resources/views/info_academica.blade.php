@@ -1,7 +1,3 @@
-@extends('layouts.marco')
-@section('info_acad')
-
-<div class="container">
 
   <form class="form-horizontal" role="form" method="POST" action="" >
       {{ csrf_field() }}
@@ -237,7 +233,3 @@
             });
 
             </script>
-</div>
-
-
-@endsection

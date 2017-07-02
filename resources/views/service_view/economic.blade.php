@@ -1,7 +1,3 @@
-@extends('layouts.marco')
-
-@section('situación_economica')
-<div class="container">
 
   <form class="form-horizontal" role="form" method="POST" action="{{ url('economics')}}" >
       {{ csrf_field() }}
@@ -30,7 +26,7 @@
                     <label class="control-label">Ocupación&nbsp; </label><input type="text" id="id_ocupacion" class="form-control" name="ocupacion" placeholder=""></input>&nbsp; &nbsp; &nbsp;
                   </div>
                   <div class="col-md-3">
-                    <label class="control-label">salario&nbsp; </label><input type="text" value="" id="id_salario" class="form-control" name="salario" placeholder=""></input>&nbsp; &nbsp; &nbsp;
+                    <label class="control-label">salario&nbsp; </label><input type="text" value=n id="id_salario" class="form-control" name="salario" placeholder=""></input>&nbsp; &nbsp; &nbsp;
                   </div>
                   <div class="col-md-3">
                     <label class="control-label">Teléfono&nbsp; </label><input type="text" id="id_nombre_telefono" class="form-control" name="telefono" placeholder=""></input>&nbsp; &nbsp; &nbsp;
@@ -234,12 +230,6 @@
 
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
-
+</div>
       </div>
   </form>
-</div>
-</div>
-</div>
-
-
-@endsection

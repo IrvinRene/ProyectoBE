@@ -1,11 +1,8 @@
-@extends('layouts.marco')
-@section('datos_personales')
-<div class="container">
 
   <form class="form-horizontal" role="form" method="POST" action="{{ url('datos_personales')}}" >
     {{ csrf_field() }}
     <div class="row">
-      <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
+      <div class="col-md-12 panel-info" style="padding-left: 0px;padding-right: 0px;">
         <div class="panel-heading"><h4><strong>Datos Personales</strong></h4></div>
           <div class="panel panel-info">
            <div class="panel-body">
@@ -85,11 +82,8 @@
             </div>
 
             <button type="submit" class="btn btn-primary" class="col-sm-6">Enviar</button>
-                  
+
         </div>
       </div>
     </div>
   </form>
-</div>
-
-@endsection
