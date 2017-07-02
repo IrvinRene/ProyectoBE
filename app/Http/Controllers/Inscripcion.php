@@ -3,12 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Disciplina;
-use App\Grupo_cultura;
-use App\Tipo_enfermedad_impedimento;
-use App\Decision;
 
-class Aspecto_salud extends Controller
+class Inscripcion extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +12,13 @@ class Aspecto_salud extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $disciplinas = Disciplina::all();
-        $culturas = Grupo_cultura::all();
-        $enfermedades = Tipo_enfermedad_impedimento::all();
-        $decisions = Decision::all();
+    {
 
-        return view('service_view.aspecto_salud', compact('disciplinas','culturas','enfermedades','decisions'));
+            return view('service_view.inscripcion');
+
+
+
+
     }
 
     /**
@@ -42,12 +39,7 @@ class Aspecto_salud extends Controller
      */
     public function store(Request $request)
     {
-
-      dd($request->id_disicplina1);
-      $aspecto_deportivo= new Disciplina();
-      $aspecto_cultura = new Grupo_cultura();
-      $aspecto_salud->Enfermedad_impedimento = $request->Enfermedad_impedimento;
-
+        //
     }
 
     /**
@@ -81,9 +73,7 @@ class Aspecto_salud extends Controller
      */
     public function update(Request $request, $id)
     {
-
-
-
+        //
     }
 
     /**

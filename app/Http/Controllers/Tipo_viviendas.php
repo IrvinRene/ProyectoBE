@@ -54,7 +54,7 @@ class Tipo_viviendas extends Controller
 
          $zona= new Zona_ub();
           $zona->zona_ub = $request->zona_ubs;
-     
+
           $pared= new Material_pared();
           $pared->material_pared = $request->material_pareds;
 

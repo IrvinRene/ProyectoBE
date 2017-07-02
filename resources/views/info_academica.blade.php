@@ -3,14 +3,14 @@
 
 <div class="container">
 
-  <form class="form-horizontal" role="form" method="POST" action="{{ url('info_academica')}}" >
+  <form class="form-horizontal" role="form" method="POST" action="" >
       {{ csrf_field() }}
       <div class="row">
         <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
           <div class="panel-heading"><h4><strong>Información Académica</strong></h4></div>
             <div class="panel-body">
               <div class="row">
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <div class="form-group">
                   <label for="academica" class="col-sm-2 control-label" >Facultad</label>
                   <div id= "academica" class="col-sm-6">
@@ -18,7 +18,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <div class="form-group">
                   <label for="academica" class="col-sm-4 control-label" >Carrera</label>
                   <div id= "academica" class="col-sm-6">
@@ -26,7 +26,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <div class="form-group">
                   <label for="academica" class="col-sm-6 control-label" >Año Académico</label>
                   <div id= "academica" class="col-sm-6">
@@ -34,10 +34,10 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-6">
                 <div class="form-group">
                   <label for="academica" class="col-sm-8   control-label" >Año de ingreso a la universidad</label>
-                  <textarea type="text" id="id_textarea_condicion" class="col-sm-2 form-control" name="ango_ing" placeholder="Describa..."></textarea>
+                  <textarea type="text" id="col-sm-2 id_textarea_condicion" class="col-sm-2 form-control" name="ango_ing" placeholder="Describa..."></textarea>
                 </div>
               </div>
             </div>
@@ -156,7 +156,7 @@
                                   <label for="academica" class="col-sm-6 control-label" >¿Dónde generalmente realiza sus labores académicas?</label>
                                   <div id= "academica" class="col-sm-5">
                                     {!! Form:: select('area_laboral', App\Area_laboral::pluck('area_laboral'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'area_laboral', 'id'=>'id_arlabo_ac')) !!}
-                                    <script src="/js/show1.js"></script>
+                                    <script src="/js/academica.js"></script>
                                   <div class="form" id="area_laboral" style="display: none;">
                                     <label class="col-sm-2 control-label" >Especifíque</label>
                                     <textarea type="text" id="id_textarea_area_laboral" class="form-control" name="Descipcion" placeholder="Especifíque"></textarea>
@@ -177,9 +177,67 @@
                       </div>
                     </div>
 
+                    <script src="https://unpkg.com/vue@2.3.4"></script>
+                    <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
+                      <div class="panel-heading"><h4><strong>Materias durante este semestre</strong></h4></div>
+                        <div class="panel-body">
+                          <div class="row col-md-12">
+                            <div id="app2">
+                              <table class="table">
+                                <thead>
+                                  <tr>
+                                    <td><strong>Materia</strong></td>
+                                    <td><strong>Profesor</strong></td>
+                                    <td><strong>R/S</strong></td>
+                                    <td></td>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr v-for="(row, index) in rows">
+                                    <td><input type="text" v-model="row.materia" v-bind:id="'materia' + index"></td>
+                                    <td><input type="text" v-model="row.prof" v-bind:id="'prof' + index"></td>
+                                    <td><input type="text" v-model="row.rs" v-bind:id="'rs' + index"></td>
+                                    <td><a v-on:click="removeRow(row)">Eliminar</a></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <div>
+
+                                <a class="btn btn-primary" role="button" v-on:click="addRow" >Link</a>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+
+
 
               </div>
 
+            </form>
+
+            <script>
+            var app  = new Vue({
+              el: "#app2",
+              data: {
+                rows: [
+                  {materia: "",prof: "", rs: ""},
+                ]
+              },
+              methods:{
+                addRow: function(){
+                  this.rows.push({materia:"",prof:"",rs:""});
+
+                },
+                removeRow: function(row){
+                  //console.log(row);
+                  this.rows.$remove(row);
+                },
+              }
+            });
+
+            </script>
+</div>
 
 
 @endsection
