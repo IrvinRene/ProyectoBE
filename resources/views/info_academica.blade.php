@@ -6,23 +6,23 @@
           <div class="panel-heading"><h4><strong>Información Académica</strong></h4></div>
             <div class="panel-body">
               <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <div class="form-group">
-                  <label for="academica" class="col-sm-2 control-label" >Facultad</label>
-                  <div id= "academica" class="col-sm-6">
+                  <label for="academica" class="col-sm-4 control-label" >Facultad</label>
+                  <div id= "academica" class="col-sm-8">
                   {!! Form:: select('facultad', App\Facultad::pluck('facultad'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'facultad','id'=>'id_d')) !!}
                   </div>
                 </div>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <div class="form-group">
                   <label for="academica" class="col-sm-4 control-label" >Carrera</label>
-                  <div id= "academica" class="col-sm-6">
+                  <div id= "academica" class="col-sm-8">
                   {!! Form:: select('carrera', App\Carrera::pluck('carrera'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'facultad','id'=>'id_d')) !!}
                   </div>
                 </div>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <div class="form-group">
                   <label for="academica" class="col-sm-6 control-label" >Año Académico</label>
                   <div id= "academica" class="col-sm-6">
@@ -30,10 +30,10 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-3">
                 <div class="form-group">
-                  <label for="academica" class="col-sm-8   control-label" >Año de ingreso a la universidad</label>
-                  <textarea type="text" id="col-sm-2 id_textarea_condicion" class="col-sm-2 form-control" name="ango_ing" placeholder="Describa..."></textarea>
+                  <label for="academica" class="col-sm-12   control-label" >Año de ingreso a la universidad</label>
+                  <textarea type="text" id="id_textarea_condicion" class="form-control" name="ango_ing" placeholder="Describa..."></textarea>
                 </div>
               </div>
             </div>

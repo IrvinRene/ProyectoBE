@@ -33,9 +33,20 @@ function decdisc()
 
       }
         else
-        {
-          $("#drop_disc").css("display", "none");
+        { 
+              $("#drop_disc").css("display", "none");
+          
         }
+
+      if(x.options[x.selectedIndex].text == "No")
+          {
+            $("#partefalsa").css("display", "block");
+
+          }
+            else
+            {
+              $("#partefalsa").css("display", "none");
+            }
     }
 
 
