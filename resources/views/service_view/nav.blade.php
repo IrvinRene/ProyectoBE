@@ -1,5 +1,5 @@
- <div class="container-fluid">
-          <nav class="navbar navbar-default">
+ <div class="container-fluid wel">
+          <nav class="navbar navbar-default wel">
             <div class="container-fluid">
               <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-header ">

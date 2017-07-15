@@ -4,13 +4,7 @@
 <div class="container">
 
   <form class="form-horizontal" role="form" method="POST" action="{{ url('')}}" >
-      {{ csrf_field() }}
-  @include('service_view.datos_personales')
-  @include('info_academica')
-  @include('service_view.economic')
-  @include('service_view.tipo_vivienda')
-  @include('service_view.aspecto_salud')
-
+    <iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiYjRlMjA2ODMtMzg1YS00YTYwLTk1YjktZmY2NmU1N2U5MTdkIiwidCI6ImYwN2I0MGFlLWI2MGItNGUwZi1iZWJlLWFmYjQyZmM0ZGM2OSIsImMiOjF9" frameborder="0" allowFullScreen="true"></iframe>
 
   </form>
 </div>

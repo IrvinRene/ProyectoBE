@@ -37,3 +37,5 @@ Route::resource('/inscripcion','inscripcion');
 Route::resource('/form','Formulario');
 Route::get('/economics', 'economicsController@index');
 Route::resource('/economics', 'economicsController');
+Route::resource('/preguntas', 'PreguntasController');
+Route::resource('/reportes', 'Reportes');

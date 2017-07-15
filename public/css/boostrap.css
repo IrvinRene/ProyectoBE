@@ -5470,7 +5470,7 @@ button.list-group-item-danger.active:focus {
 }
 .panel-heading1 {
   padding: 10px 15px;
- 
+
 }
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
@@ -6763,8 +6763,9 @@ footer{
   bottom: 0;
   left: 0;
   right: 0;
-  
   height: auto;
+  position: fixed;
+  clear: both;
 }
 
 .wel{
