@@ -56,7 +56,5 @@ Route::get('/home', 'HomeController@index');
 Route::get('/economics', 'economicsController@index');
 Route::resource('/economics', 'economicsController');
 Route::resource('/preguntas', 'PreguntasController');
-<<<<<<< HEAD
-=======
+
 Route::resource('/reportes', 'Reportes');
->>>>>>> 5d25c9a0fc321953054b47f99d6e0973bc3ce407
