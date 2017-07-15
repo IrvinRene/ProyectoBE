@@ -38,10 +38,10 @@ class Noticias extends Controller
      */
     public function store(Request $request)
     {
-     
+
         $this->validate($request,[
                 'titulo'=>'required',
-                'descripcion'=>'required' 
+                'descripcion'=>'required'
             ]);
 
 
@@ -72,7 +72,8 @@ class Noticias extends Controller
      */
     public function edit($id)
     {
-        //
+        $Noticia= Noticia::find('$id');
+        return view ('home')->with (['edit'=> true, 'noticia' => $noticia]);
     }
 
     /**
