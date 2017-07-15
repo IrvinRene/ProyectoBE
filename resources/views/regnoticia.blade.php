@@ -33,7 +33,7 @@
 
                     <div class="form-group">
                       <label for="urlimgnot">Adjuntar imagen</label>
-                      <input type="file" id="urlimgnot">
+                      <input type="file" id="urlimg">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Enviar</button>
@@ -62,7 +62,11 @@
                            <tr>
                              <td>{{$noticia->titulo}}</td>
                              <td>{{$noticia->descripcion}}</td>
-                             <td>{{$noticia->urlimgnot}}</td>
+                             <td> <img src="imgNoticias/{{$n->urlImg}}" class="img-responsive" alt="Responsive image" style="max-width:100px;"></td>
+                              <td>
+                                <a href="noticias/{{$n->id}}/edit" class="btn btn-warning btn-xs">Modificar</a>
+                                <a href="" class="btn btn-danger btn-xs">Eliminar</a>
+                              </td>
                            </tr>
                        @endforeach
                      </tbody>
