@@ -60,12 +60,35 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
-    }
-}
+
+     public function generar_clave()
+     {
+
+           $password = "";
+           $caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+           //aquí podemos incluir incluso caracteres especiales pero cuidado con las ‘ y “ y algunos otros
+           $length = 8;
+           $max = strlen($caracteres) - 1;
+           for ($i=0;$i<$length;$i++)
+           {
+                $password .= substr($caracteres, rand(0, $max), 1);
+           }
+           return $password;
+      }
+
+      protected function create (array $data)
+      {
+            $user = User::create([
+              'nombre'=>$data['nombre'],
+              'email'=>$data['email'],
+              'password'=>bcrypt($data['password']),
+              'estado'=>'0',
+            ]);
+            User_role::create([
+              'user_id'=>$user->id,
+              'role_id'=>2,
+            ]);
+            $user->notify(new EmailConfirmation($password));
+            return redirect('/inscripcion')->with('status','Le enviamos un correo de activacion. Consultar su correo electrónico');
+
+      }

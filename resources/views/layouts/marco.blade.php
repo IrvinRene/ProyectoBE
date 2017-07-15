@@ -29,6 +29,7 @@
    @yield('aspecto_salud')
    @yield('datos_personales')
    @yield('formulario')
+   @yield('reporte')
   @include('service_view.footer')
 </body>
 </html>
@@ -40,5 +41,8 @@
         <p class="lead">Please use the theme picker above to see how this snippet works with bootswatch themes. I hope you enjoy this snippet.</p>
     </div>
 </div>
+<<<<<<< HEAD
 
     
+=======
+>>>>>>> 5d25c9a0fc321953054b47f99d6e0973bc3ce407

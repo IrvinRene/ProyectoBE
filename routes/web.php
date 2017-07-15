@@ -35,6 +35,28 @@ Route::resource('/datos_personales', 'Datos_personales');
 
 Route::resource('/inscripcion','inscripcion');
 Route::resource('/form','Formulario');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
 Route::get('/economics', 'economicsController@index');
 Route::resource('/economics', 'economicsController');
 Route::resource('/preguntas', 'PreguntasController');
+<<<<<<< HEAD
+=======
+Route::resource('/reportes', 'Reportes');
+>>>>>>> 5d25c9a0fc321953054b47f99d6e0973bc3ce407

@@ -4496,7 +4496,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default {
   background-color: #f8f8f8;
-  border-color: #e7e7e7;
+  color: azure;
 }
 .navbar-default .navbar-brand {
   color: #777;
@@ -4510,7 +4510,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #777;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #777;
+  color: azure;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -5470,7 +5470,7 @@ button.list-group-item-danger.active:focus {
 }
 .panel-heading1 {
   padding: 10px 15px;
- 
+
 }
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
@@ -6763,12 +6763,13 @@ footer{
   bottom: 0;
   left: 0;
   right: 0;
-  
   height: auto;
+  position: fixed;
+  clear: both;
 }
 
 .wel{
-  background-color: #0C2C62;
+  background-color: #1461a2;
   color: azure;
 }
 

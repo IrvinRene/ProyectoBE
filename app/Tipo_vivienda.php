@@ -12,7 +12,7 @@ class Tipo_vivienda extends Model
      *
      * @var array
      */
-    
+     protected $table = ('tipo_vivienda');
     protected $fillable = [
         'tipo_vivienda',
     ];

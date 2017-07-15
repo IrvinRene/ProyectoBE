@@ -1,5 +1,60 @@
 <form class="form-horizontal" role="form" method="POST" action="{{ url('aspecto_salud')}}" >
       {{ csrf_field() }}
+      <div class="row">
+        <div class="col-md-6">
+              <div class="form-group">
+                <label for="aspecto_salud" class="col-sm-6 control-label" >¿Participa o ha participado en algun grupo deporte?</label>
+                <div id= "drop2" class="col-sm-4">
+                  <select name="drop21" class="form-control" id="drop_aspect2">
+                    <option value="0" disabled selected>--Seleccionar--</option>
+                    @foreach($decisions as $decision)
+                      <option value="{{$decision->id_decision}}">{{$decision->decision}}</option>
+                    @endforeach
+                  </select>
+                </div>
+               
+              </div>
+            </div>
+
+            <div class="panel-heading col-md-6" id="drop_disc" style="display:none;">
+
+            @for($i=0;$i<50;$i++)
+              @if($i%2 != 0)
+              <div class="col-md-3">
+                <div class="form-group">
+                  <div class="col-sm-offset-6 col-sm-6">
+                      <button type="submit" class="btn btn-primary"> Validar </button>
+                  </div>
+                </div>
+              </div>
+              @endif
+            @endfor
+
+            </div>
+            <div class="panel-heading col-md-6" id="partefalsa" style="display:none;">
+
+            @for($i=0;$i<50;$i++)
+              @if($i%2 == 0)
+              <div class="col-md-3">
+              <div class="form-group">
+                <label for="aspecto_salud" class="col-sm-6 control-label" >¿Participa o ha participado en algun grupo deporte?</label>
+                <div id= "drop2" class="col-sm-4">
+                  <select name="drop21" class="form-control" id="drop_aspect2">
+                    <option value="0" disabled selected>--Seleccionar--</option>
+                    @foreach($decisions as $decision)
+                      <option value="{{$decision->id_decision}}">{{$decision->decision}}</option>
+                    @endforeach
+                  </select>
+                </div>
+               
+              </div>
+            </div>
+              @endif
+            @endfor
+
+            </div>
+         <script src="/js/aspectos.js"></script>
+      </div>
 
       <div class="row">
         <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
@@ -32,9 +87,7 @@
                   @endforeach
                 </div>
 
-                <!--<div id= "academica" class="col-sm-6">
-                {!! Form:: select('tipo_enfermedad_impedimento', App\Tipo_enfermedad_impedimento::pluck('tipo_enfermedad_impedimento'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'tipo_enfermedad_impedimento','id'=>'id_d')) !!}
-              </div>-->
+                
               </div>
           </div>
       </div>

@@ -10,7 +10,10 @@ use App\Condicion;
 use App\Document;
 use App\Preguntas;
 use App\Situacion_economica;
+<<<<<<< HEAD
 use App\CreadorInputs;
+=======
+>>>>>>> 5d25c9a0fc321953054b47f99d6e0973bc3ce407
 use Illuminate\Support\Facades\DB;
 
 class PreguntasController extends Controller
@@ -20,6 +23,7 @@ class PreguntasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function __construct(CreadorInputs $creador){
 
       $this->x = $creador;
@@ -28,6 +32,8 @@ class PreguntasController extends Controller
 
     }
 
+=======
+>>>>>>> 5d25c9a0fc321953054b47f99d6e0973bc3ce407
     public function index()
     {
 
@@ -53,6 +59,7 @@ class PreguntasController extends Controller
 
       $form = '';
       foreach ($segmentos as $segmento) {
+<<<<<<< HEAD
       //if($segmento->segmento == 'C' || $segmento->segmento == 'x'){
         $form = $form . '<div class="row panel panel-primary">
         <div class="panel-heading">'. $segmento .'</div>
@@ -91,6 +98,43 @@ class PreguntasController extends Controller
               $form = $form . '</div><div class="row">';
 
             }
+=======
+      //if($segmento->segmento == 'A' || $segmento->segmento == 'B'){
+        $form = $form . '<div class="row panel panel-primary">
+        <div class="panel-heading">'. $segmento .'</div>
+        <div class="panel-body">';
+        $preguntas = Preguntas::where('segmento',$segmento->segmento)->where('id_pregunta',null)->get();
+        foreach ($preguntas as $pregunta) {
+          $form = $form . '<div class="col-md-6">';
+          if($pregunta->tipo_resp != 'tabla' ){
+            if($pregunta->dependencia == '1'){
+              $form = $form. $this->crear($pregunta).'<br>';
+              $dependientesCiertas = Preguntas::where('id_pregunta',$pregunta->id)->where('parte','1')->get();
+              if ($dependientesCiertas->count()) {
+                $form = $form.'<div class="col-md-12" style="display:none" id="cierto['.$pregunta->id.']"><div class="well">';
+              foreach ($dependientesCiertas as $pregunta) {
+                  $form = $form. $this->crear($pregunta).'<br>';
+              }
+                $form = $form.'</div></div>';
+                # code...
+              }
+
+              $dependientesFalsas = Preguntas::where('id_pregunta',$pregunta->id)->where('parte','0')->get();
+              if ($dependientesFalsas->count()) {
+                $form = $form.'<div class="col-md-12" style="display:none" id="falso['.$pregunta->id.']"><div class="well">';
+                foreach ($dependientesFalsas as $pregunta) {
+                    $form = $form. $this->crear($pregunta).'<br>';
+                }
+                $form = $form.'</div></div>';
+                # code...
+              }
+              //$dependientesCiertas = Preguntas::where('id_pregunta',$pregunta->id)->where('parte','1')->get();
+            }else{
+                $form = $form. $this->crear($pregunta).'<br>';
+            }
+          }else{
+            $form = $form . $this->creartabla($pregunta);
+>>>>>>> 5d25c9a0fc321953054b47f99d6e0973bc3ce407
           }
           # code...
           $form = $form . '</div>';
@@ -101,7 +145,11 @@ class PreguntasController extends Controller
         </div>';
 
         //$form = $this->preguntas($preguntas);
+<<<<<<< HEAD
     // }
+=======
+      //}
+>>>>>>> 5d25c9a0fc321953054b47f99d6e0973bc3ce407
     }
 
 
@@ -118,6 +166,7 @@ class PreguntasController extends Controller
 
     public function crear($pregunta)
     {
+<<<<<<< HEAD
       $d = '';
       switch($pregunta->tipo_resp) {
         case "drop":{
@@ -127,16 +176,30 @@ class PreguntasController extends Controller
         }
         case "text":{
           $d = $d . $this->x->text($pregunta->id,$pregunta->pregunta,$pregunta->segmento);
+=======
+      $d = '<div class="col-md-6">'.$pregunta->pregunta.'</div>';
+      switch($pregunta->tipo_resp) {
+        case "drop":{
+          $d = $d . $this->creardrop($pregunta->tabla, $pregunta->id);
+            break;
+        }
+        case "text":{
+          $d = $d . $this->creartext($pregunta->id);
+>>>>>>> 5d25c9a0fc321953054b47f99d6e0973bc3ce407
           break;
 
         }
         case "check":{
+<<<<<<< HEAD
           $datos = DB::table($pregunta->tabla)->select()->get();
           $d = $d . $this->x->crearcheck($pregunta,$datos);
           break;
         }
         case "nada":{
           $d = $d .$pregunta->pregunta;
+=======
+          $d = $d . $this->crearcheck($pregunta->tabla, $pregunta->id);
+>>>>>>> 5d25c9a0fc321953054b47f99d6e0973bc3ce407
           break;
         }
       }
@@ -178,6 +241,7 @@ class PreguntasController extends Controller
       # code...
     }
 
+<<<<<<< HEAD
     public function buscarDEP($pregunta)
     {
       $form = '';
@@ -276,6 +340,67 @@ class PreguntasController extends Controller
       return $preguntas;
     }
     
+=======
+
+    public function buscarpreguntasdep($id){
+
+      $preguntas = Preguntas::where('id_pregunta',$id)->get();
+      return $preguntas;
+    }
+    public function crearpregunta($preguntas){
+      $form = '<div class="row">';
+      foreach ($preguntas as $pregunta) {
+        $form = $form . '
+        <div class="col-md-6 col-sm-6">
+            <div class="form-group">
+              <label  class="col-md-6 col-sm-6 control-label" >'. $pregunta->pregunta .'</label>
+                ';
+                switch($pregunta->tipo_resp) {
+                  case "drop":{
+                    $form = $form . $this->creardrop($pregunta->tabla, $pregunta->id);
+                      break;
+                  }
+                  case "text":{
+                    $form = $form . $this->creartext($pregunta->id);
+                    break;
+
+                  }
+                  case "check":{
+                    $form = $form . $this->crearcheck($pregunta->tabla, $pregunta->id);
+                    break;
+                  }
+
+                }
+              $form = $form . '
+            </div>
+          </div>';
+      if($pregunta->dependencia == '1'){
+        $datos = Preguntas::where('id_pregunta',$pregunta->id)->get();
+        //dd($datos);
+        $form = $form . $this->crearpregunta($datos);
+      }
+      }
+      $form = $form .'</div>';
+      return $form;
+
+    }
+
+    public function creardrop($tabla, $id)
+    {
+      //recibe la tabla contenida en el campo de tabla en la base de datos de la tabla preguntas desde el switch cuando
+      //cuando el tipo_resp = drop;
+      $datos = DB::table($tabla)->select()->get();
+      $fr = '<div id= "" class="col-md-6 col-sm-6">
+       <select name="'. $id .'" class="form-control" onchange="drop(this,'.$id.')" id="'. $tabla .'">
+        <option value="0" disabled selected>--Seleccionar--</option>';
+      foreach ($datos as $dato) {
+        $fr = $fr . '<option value="'. $dato->id .'">'. $dato->descrip .'</option>';
+      }
+      $fr = $fr . '</select>
+      </div>';
+      return $fr;
+    }
+>>>>>>> 5d25c9a0fc321953054b47f99d6e0973bc3ce407
     public function crearcheck($tabla, $id)
     {
       //recibe la tabla contenida en el campo de tabla en la base de datos de la tabla preguntas desde el switch cuando
@@ -284,7 +409,11 @@ class PreguntasController extends Controller
       $fr = '<div class="row">
           <div class="col-xs-12 col-sm-6 col-md-12">
               <div class="panel panel-default">
+<<<<<<< HEAD
                   <div class="panel-heading"></div>
+=======
+                  <div class="panel-heading">Material Design Switch Demos</div>
+>>>>>>> 5d25c9a0fc321953054b47f99d6e0973bc3ce407
                   <ul class="list-group">';
                   foreach ($datos as $dato) {
                     $fr = $fr . '
@@ -314,8 +443,11 @@ class PreguntasController extends Controller
     {
       $datos = $request->all();
 
+<<<<<<< HEAD
       dd($datos);
 
+=======
+>>>>>>> 5d25c9a0fc321953054b47f99d6e0973bc3ce407
 
       foreach ($datos as $key => $value) {
         if($key != "_token"){

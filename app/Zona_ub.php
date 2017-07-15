@@ -12,7 +12,7 @@ class Zona_ub extends Model
      *
      * @var array
      */
-    
+     protected $table = ('zona_ub');
     protected $fillable = [
         'zona_ub',
     ];
