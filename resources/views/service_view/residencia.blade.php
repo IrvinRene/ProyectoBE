@@ -1,7 +1,4 @@
-@extends('layouts.marco')
-@section('tipo_vivienda')
-
-<div class="container">  
+<div class="container">
   <form class="form-horizontal" role="form" method="POST" action="{{ url('residencia')}}" >
       {{ csrf_field() }}
     <div class="row">
@@ -9,10 +6,10 @@
         <div class="panel-heading"><h4><strong>Estudiantes que cambian de residencia por motivo de estudios</strong></h4></div>
         	<div class="panel-body">
         	  <div class="col-md-4">
-        		
+
         			<label class="control-label" >Dirección actual</label>
         			<textarea type="text" id="id_textarea_dactual" class="form-control" name="descripcion" placeholder="Especifíque"></textarea>
-        		
+
         	  </div>
 
         	  <div class="col-md-4">
@@ -32,12 +29,12 @@
       <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
        	  <div class="panel-body">
        	  <div class="col-md-3">
-                  <label for="condiciones" >¿Cambió de residencia por motivos de estudios?</label>            
+                  <label for="condiciones" >¿Cambió de residencia por motivos de estudios?</label>
                       {!! Form:: select('cambio', App\Decision::pluck('decision'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'cambio', 'id'=>'id_cambio')) !!}
                       <script src="/js/show.js"></script>
-                       
-                
-                
+
+
+
               </div>
         	  <div class="col-md-3">
                 <div class="form-group">
@@ -64,7 +61,7 @@
                           <label class="col-sm-2 control-label" >Especifíque</label>
                           <textarea type="text" id="id_textarea_tipo" class="form-control" name="descripcion" placeholder="Especifíque"></textarea>
                         </div>
-                    </div> 
+                    </div>
                 </div>
               </div>
 
@@ -77,15 +74,15 @@
                   </div>
                     <div class="col-sm-7">
                       {!! Form:: select('condiciones', App\Tendencia::pluck('tendencia'), null, array('placeholder' => '--Seleccionar--','class'=>'form-control', 'name'=>'condiciones', 'id'=>'id_condicion')) !!}
-                      
-                    </div> 
+
+                    </div>
                 </div>
               </div>
 
 
 
-              
-      </div>		
+
+      </div>
     </div>
     <div class="col-sm-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
     	<div class="panel-body">
@@ -103,7 +100,7 @@
       <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
         <div class="panel-heading"><h4><strong>Condiciones físicas de la vivienda, descríbalas:</strong></h4></div>
         	<div class="panel-body">
-        		<div class="form-group panel-heading" >       			
+        		<div class="form-group panel-heading" >
        			<textarea type="text" id="id_textarea_dactual" class="form-control" name="descripcion" placeholder="Especifíque"  rows="4"></textarea>
         		</div>
         	  </div>
@@ -114,7 +111,7 @@
       <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
         <div class="panel-heading"><h4><strong>Otras facilidades</strong></h4></div>
         	<div class="panel-body">
-        		<div class="form-group panel-heading" >       			
+        		<div class="form-group panel-heading" >
        			<textarea type="text" id="id_textarea_facilidad" class="form-control" name="descripcion" placeholder="Especifíque"  rows="4"></textarea>
         		</div>
         	  </div>
@@ -124,7 +121,7 @@
       <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
         <div class="panel-heading"><h4><strong>Comentarios adicionales</strong></h4></div>
         	<div class="panel-body">
-        		<div class="form-group panel-heading" >       			
+        		<div class="form-group panel-heading" >
        			<textarea type="text" id="id_textarea_comentarios" class="form-control" name="descripcion" placeholder="Especifíque"  rows="4"></textarea>
         		</div>
         	  </div>
@@ -138,9 +135,3 @@
     </div>
   </form>
 </div>
-
-
-
-
-
-@endsection

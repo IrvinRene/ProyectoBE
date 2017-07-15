@@ -25,6 +25,7 @@
    @yield('info_acad')
    @yield('aspecto_salud')
    @yield('datos_personales')
+   @yield('formulario')
   @include('service_view.footer')
 </body>
 </html>
