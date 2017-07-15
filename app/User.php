@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Authenticatable, CanResetPassword;
+    
 
     /**
      * The attributes that are mass assignable.
