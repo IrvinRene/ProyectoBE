@@ -35,8 +35,7 @@ Route::resource('/datos_personales', 'Datos_personales');
 
 Route::resource('/inscripcion','inscripcion');
 Route::resource('/form','Formulario');
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 Auth::routes();
 
@@ -53,14 +52,8 @@ Route::get('/home', 'HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-=======
-=======
->>>>>>> b53f31347b9a2da0550229cfdc805c27afe8f494
+
 Route::get('/economics', 'economicsController@index');
 Route::resource('/economics', 'economicsController');
 Route::resource('/preguntas', 'PreguntasController');
 Route::resource('/reportes', 'Reportes');
-<<<<<<< HEAD
->>>>>>> b53f31347b9a2da0550229cfdc805c27afe8f494
-=======
->>>>>>> b53f31347b9a2da0550229cfdc805c27afe8f494
