@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
-use App\Noticia;
-
-class Noticias extends Controller
+class Reportes extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +14,6 @@ class Noticias extends Controller
     public function index()
     {
         //
-        return view ('layouts.formulario');
     }
 
     /**
@@ -38,19 +34,7 @@ class Noticias extends Controller
      */
     public function store(Request $request)
     {
-
-        $this->validate($request,[
-                'titulo'=>'required',
-                'descripcion'=>'required'
-            ]);
-
-
-         $noticia= new Noticia();
-         $noticia->titulo = $request->titulo;
-         $noticia->descripcion = $request->descripcion;
-
-         $noticia->save();
-         dd('Datos guardados');
+        //
     }
 
     /**
@@ -72,8 +56,7 @@ class Noticias extends Controller
      */
     public function edit($id)
     {
-        $Noticia= Noticia::find('$id');
-        return view ('home')->with (['edit'=> true, 'noticia' => $noticia]);
+        //
     }
 
     /**

@@ -1,4 +1,5 @@
-
+@extends('layouts.marco')
+@section('situación_economica')
   <form class="form-horizontal" role="form" method="POST" action="{{ url('economics')}}" >
       {{ csrf_field() }}
         <div class="col-md-12 panel panel-info" style="padding-left: 0px;padding-right: 0px;">
@@ -26,7 +27,7 @@
                     <label class="control-label">Ocupación&nbsp; </label><input type="text" id="id_ocupacion" class="form-control" name="ocupacion" placeholder=""></input>&nbsp; &nbsp; &nbsp;
                   </div>
                   <div class="col-md-3">
-                    <label class="control-label">salario&nbsp; </label><input type="text" value=n id="id_salario" class="form-control" name="salario" placeholder=""></input>&nbsp; &nbsp; &nbsp;
+                    <label class="control-label">salario&nbsp; </label><input type="text"  id="id_salario" class="form-control" name="salario" placeholder=""></input>&nbsp; &nbsp; &nbsp;
                   </div>
                   <div class="col-md-3">
                     <label class="control-label">Teléfono&nbsp; </label><input type="text" id="id_nombre_telefono" class="form-control" name="telefono" placeholder=""></input>&nbsp; &nbsp; &nbsp;
@@ -76,7 +77,7 @@
               <div class="col-md-6">
                 <h4><strong>Financiamiento de Estudios</strong></h4>
                 @foreach($recursos as $recurso)
-                  <input type="checkbox" name="recurso" value={{$recurso->id_recurso}}">{{$recurso->recurso}}</input><br>
+                  <input type="checkbox" name="rec{{$recurso->id_recurso}}" value={{$recurso->id_recurso}}">{{$recurso->recurso}}</input><br>
                 @endforeach
               </div>
               <div class="col-md-6">
@@ -233,3 +234,4 @@
 </div>
       </div>
   </form>
+@endsection
