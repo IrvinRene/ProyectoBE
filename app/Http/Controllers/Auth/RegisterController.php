@@ -6,6 +6,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use App\User_role;
 
 class RegisterController extends Controller
 {
@@ -28,6 +30,7 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
+
 
     /**
      * Create a new controller instance.
@@ -79,9 +82,9 @@ class RegisterController extends Controller
       protected function create (array $data)
       {
             $user = User::create([
-              'nombre'=>$data['nombre'],
+              'name'=>$data['name'],
               'email'=>$data['email'],
-              'password'=>bcrypt($data['password']),
+              'password'=>bcrypt($data($password)),
               'estado'=>'0',
             ]);
             User_role::create([
@@ -92,3 +95,4 @@ class RegisterController extends Controller
             return redirect('/inscripcion')->with('status','Le enviamos un correo de activacion. Consultar su correo electrónico');
 
       }
+    }

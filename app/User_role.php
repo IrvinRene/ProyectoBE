@@ -9,6 +9,6 @@ class User_role extends Model
     //
     protected $table = 'user_role';
     protected $fillable = [
-      'user_id', 'role_id';
+      'user_id', 'role_id'
     ];
 }

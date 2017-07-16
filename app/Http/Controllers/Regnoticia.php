@@ -41,23 +41,24 @@ class Regnoticia extends Controller
         //
         $this->validate($request, [
           'titulo' => 'required',
-          'descripcion' => 'requerid'
+          'descripcion' => 'required',
+          'urlimgnot' => 'required'
         ]);
         $noticia = new Noticia();
         $noticia->titulo = $request->titulo;
         $noticia->descripcion = $request->descripcion;
-
+        $noticia->urlimgnot = $request->urlimgnot;
 
         $img = $request->file('urlimgnot');
         $file_route = time().'_'.$img->getClienteOriginalName();
         storage::disk('imgnoticia')->put($file_route, file_get_contents($img->getRealPath()));
         $noticia->urlimgnot = $file_route;
         $noticia->save();
-        /*if($noticia->save()){
+        if($noticia->save()){
           return back()->with('msj', 'Datos guardados');
         } else {
           return back()->with('errormsj', 'Los datos no se guardaron');
-        }*/
+        }
         return view ('regnoticia');
 
     }
