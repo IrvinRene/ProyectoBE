@@ -11,3 +11,4 @@ app/Decision.php
 routes/web.php
 public/js/aspectos.js
 public/js/aspectos.js
+app/User.php
