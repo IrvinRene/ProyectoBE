@@ -1,68 +1,55 @@
+function drop(y,id)
+{
+  var x = y;
+
+<<<<<<< HEAD
+  if(x.options[x.selectedIndex].text == "Sí" )
+  {
+    var g = "cierto["+id+"]";
+    $(document.getElementById(g)).css("display", "block");
+    var f = "falso["+id+"]";
+    $(document.getElementById(f)).css("display", "none");
+  }else{
+    if(x.options[x.selectedIndex].text == "No")
+  {
+    var g = "cierto["+id+"]";
+    $(document.getElementById(g)).css("display", "none");
+    var f = "falso["+id+"]";
+    $(document.getElementById(f)).css("display", "block");
+
+  }else{
+    if(x.options[x.selectedIndex].text == "Otros")
+=======
+  if(x.options[x.selectedIndex].text == "Sí" || x.options[x.selectedIndex].text == "Otros" )
+>>>>>>> 5d25c9a0fc321953054b47f99d6e0973bc3ce407
+  {
+    var g = "cierto["+id+"]";
+    $(document.getElementById(g)).css("display", "block");
+    var f = "falso["+id+"]";
+    $(document.getElementById(f)).css("display", "none");
+  }
+<<<<<<< HEAD
+  else{
+    var g = "cierto["+id+"]";
+    $(document.getElementById(g)).css("display", "none");
+    var f = "falso["+id+"]";
+    $(document.getElementById(f)).css("display", "none");
+  }
+  }
+
+  }
+  
 
 
-/*+++++++++++++++++++++++script de aspectos salud, deportes, cultura+++++++++++++++++++++++++++++++++++++*/
-
-      document.getElementById("drop_aspect").addEventListener("change", decasp);
-
-/*+++++++++++++++++++++++ inicia script drop down  enfermedades+++++++++++++++++++++++++++++++++++++++++++*/
-      function decasp()
-      {
-        var x = document.getElementById("drop_aspect");
-        if(x.options[x.selectedIndex].text == "Sí")
-        {
-          $("#drop_enf").css("display", "block");
-        }
-          else
-          {
-            $("#drop_enf").css("display", "none");
-          }
-      }
-/*+++++++++++++++++++++++ fin script drop down  enfermedades+++++++++++++++++++++++++++++++++++++++++++*/
-
-/*+++++++++++++++++++++++ inicia script drop down  deportes +++++++++++++++++++++++++++++++++++++++++++*/
-
-document.getElementById("drop_aspect2").addEventListener("change", decdisc);
-
-function decdisc()
-
+=======
+    if(x.options[x.selectedIndex].text == "No")
     {
-      var x = document.getElementById("drop_aspect2");
-      if(x.options[x.selectedIndex].text == "Sí")
-      {
-        $("#drop_disc").css("display", "block");
+      var g = "cierto["+id+"]";
+      $(document.getElementById(g)).css("display", "none");
+      var f = "falso["+id+"]";
+      $(document.getElementById(f)).css("display", "block");
 
-      }
-        else
-        {
-          $("#drop_disc").css("display", "none");
-        }
     }
+>>>>>>> 5d25c9a0fc321953054b47f99d6e0973bc3ce407
 
-
-/*+++++++++++++++++++++++fin script drop down  deportes +++++++++++++++++++++++++++++++++++++++++++*/
-
-
-/*+++++++++++++++++++++++ inicia script drop down cultura +++++++++++++++++++++++++++++++++++++++++++*/
-
-document.getElementById("drop_aspect3").addEventListener("change", deccult);
-
-function deccult()
-
-    {
-      var x = document.getElementById("drop_aspect3");
-      if(x.options[x.selectedIndex].text == "Sí")
-      {
-        $("#drop_cult").css("display", "block");
-
-      }
-        else
-        {
-          $("#drop_cult").css("display", "none");
-        }
-    }
-
-
-
-
-
-/*+++++++++++++++++++++++fin script drop down  deportes +++++++++++++++++++++++++++++++++++++++++++*/
+}

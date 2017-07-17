@@ -6,6 +6,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use App\User_role;
 
 class RegisterController extends Controller
 {
@@ -40,6 +42,37 @@ class RegisterController extends Controller
     }
 
     /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        $password_random = str_random(6);
+
+        $user = new \App\User;
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->password = bcrypt($password_random);
+        $user->save();
+
+        \Mail::send('emails.registro', ['password' => $password_random], function($message) use ($user) {
+
+            $message->to($user->email, $user->name)
+            ->from('sandramgr94@gmail.com', 'admin')
+            ->subject('bienvenido');
+        });
+
+        $this->guard()->login($user);
+
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
+    }
+
+    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
@@ -49,8 +82,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'email' => 'required|email|max:255|unique:users'
         ]);
     }
 
