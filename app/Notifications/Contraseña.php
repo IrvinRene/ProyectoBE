@@ -5,7 +5,7 @@ namespace App\Notifications;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Messages\Contraseña;
 
 class Contraseña extends Notification
 {
@@ -16,9 +16,10 @@ class Contraseña extends Notification
      *
      * @return void
      */
-    public function __construct()
+     public $password;
+    public function __construct($password)
     {
-        //
+        $this->password=$password;
     }
 
     /**
@@ -36,7 +37,7 @@ class Contraseña extends Notification
      * Get the mail representation of the notification.
      *
      * @param  mixed  $notifiable
-     * @return \Illuminate\Notifications\Messages\MailMessage
+     * @return \Illuminate\Notifications\Messages\Contraseña
      */
     public function toMail($notifiable)
     {
@@ -45,7 +46,7 @@ class Contraseña extends Notification
                     ->subject('Contraseña para ingresar al formulario de Bienestar Estudiantil')
                     ->line('Con esta contraseña podrás completar el formulario')
                     ->line('Saludos!');
-                    
+
     }
 
     /**

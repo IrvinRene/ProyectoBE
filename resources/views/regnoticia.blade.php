@@ -33,10 +33,10 @@
 
                     <div class="form-group">
                       <label for="urlimgnot">Adjuntar imagen</label>
-                      <input type="file" id="urlimg">
+                      <input type="file" class="form-control" id="urlimgnot" name="urlimgnot">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary">Crear</button>
                   </form>
                 </div>
             </div>
