@@ -82,7 +82,7 @@ class PreguntasController extends Controller
               $form = $form. '<div class="row">'.$this->crear($pregunta).'</div>';
               $form = $form . $this->buscarDEP($pregunta);
               $form = $form . '</div><div class="row">';
-            
+
             }else{
 
               $form = $form . '</div><div class="row container">';
@@ -182,11 +182,11 @@ class PreguntasController extends Controller
     {
       $form = '';
       $dependientesCiertas = Preguntas::where('id_pregunta',$pregunta->id)->where('parte','1')->get();
-                
+
                     if ($dependientesCiertas->count()) {
 
                       $form = $form.'<div class="col-md-12" style="display:none" id="cierto['.$pregunta->id.']"><div class="well">';
-                        
+
 
                         foreach ($dependientesCiertas as $dato1) {
                             $form = $form. $this->crear($dato1).'<br>';
@@ -205,7 +205,7 @@ class PreguntasController extends Controller
 
 
                     $form = $form.'<div class="col-md-12" style="display:none" id="falso['.$pregunta->id.']"><div class="well">';
-                        
+
                         foreach ($dependientesFalsas as $dato2) {
                             $form = $form. $this->crear($dato2).'<br>';
                         }
@@ -217,13 +217,13 @@ class PreguntasController extends Controller
 
 
                 $dependientesnull = Preguntas::where('id_pregunta',$pregunta->id)->where('parte',null)->get();
-                
+
 
 
                   if ($dependientesnull->count()) {
 
                     $form = $form.'<div class="row container" id="none['.$pregunta->id.']"><div class="well">';
-                        
+
                         foreach ($dependientesnull as $dato3) {
                             $form = $form. $this->crear($dato3).'<br>';
                         }
@@ -275,7 +275,7 @@ class PreguntasController extends Controller
       $preguntas = Preguntas::where('id_pregunta',$id)->get();
       return $preguntas;
     }
-    
+
     public function crearcheck($tabla, $id)
     {
       //recibe la tabla contenida en el campo de tabla en la base de datos de la tabla preguntas desde el switch cuando
@@ -314,7 +314,7 @@ class PreguntasController extends Controller
     {
       $datos = $request->all();
 
-      dd($datos);
+      
 
 
       foreach ($datos as $key => $value) {
