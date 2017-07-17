@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use \Illuminate\Support\Facades\Mail;
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,9 +35,11 @@ Route::resource('/datos_personales', 'Datos_personales');
 
 Route::resource('/inscripcion','inscripcion');
 Route::resource('/form','Formulario');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 50cbdf1ca7991391ca8f5ced80c286526ff9c06f
 Route::get('/economics', 'economicsController@index');
 Route::resource('/economics', 'economicsController');
 Route::resource('/preguntas', 'PreguntasController');
-
-Route::resource('/reportes', 'Reportes');
+Route::resource('/mosnoticia','Mosnoticia');

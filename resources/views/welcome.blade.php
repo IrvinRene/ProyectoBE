@@ -18,6 +18,7 @@
         <title>Bienestar Estudiantil</title>
 
     </head>
+<<<<<<< HEAD
   <body id="page-top" class="index">
       <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
@@ -200,4 +201,15 @@
         </a>
     </div>
 </body>
+=======
+    <body>
+        <nav class="panel-heading wel">
+
+        </nav>
+        @include('service_view.carousel')
+        @include('service_view.footer')
+    </body>
+
+
+>>>>>>> 50cbdf1ca7991391ca8f5ced80c286526ff9c06f
 </html>

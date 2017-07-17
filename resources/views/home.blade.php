@@ -8,7 +8,9 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    Ha iniciado sesión correctamente
+                    
+
+
                 </div>
             </div>
         </div>

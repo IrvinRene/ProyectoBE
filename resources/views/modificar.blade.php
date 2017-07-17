@@ -1,4 +1,4 @@
-@extends('layouts.marco')
+
 @section('regnoticia')
 <div class="container">
     <div class="row">
@@ -13,7 +13,11 @@
                       @if(session()->has('errormsj'))
                       <div class="alert alert-success" role="alert">Error al guardar los datos</div>
                       @endif
-                  <form role="form" method="post" action="{{ url('noticias')}}" enctype="multipart/form-data">
+
+                      @if(isset($noticia))
+                  <form  role="form" method="POST" action="{{ route('noticias.update', $noticia->id)}}" enctype="multipart/form-data">
+                    <input name="_method" type="hidden" value="PUT">
+
                   {{ csrf_field() }}
                     <div class="form-group">
                       <label for="titulo">Título</label>
@@ -38,43 +42,11 @@
 
                     <button type="submit" class="btn btn-primary">Crear</button>
                   </form>
+                  @endif
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Registro de noticias</div>
-                <div class="table-responsive">
-                   <table class="table table-bordered success">
-                     @if(isset($noticias))
-                     <thead>
-                       <th>Titulo</th>
-                       <th>Descripcion</th>
-                       <th>Imagen</th>
-                     </head>
 
-                     <tbody>
-                       @foreach ($noticias as $noticia)
-                           <tr>
-                             <td>{{$noticia->titulo}}</td>
-                             <td>{{$noticia->descripcion}}</td>
-                             <td> <img src="imgNoticias/{{$noticia->urlimgnot}}" class="img-responsive" alt="Responsive image" style="max-width:100px;"></td>
-                              <td>
-                                <a href="noticias/{{$noticia->id}}/edit" class="btn btn-warning btn-xs">Modificar</a>
-                                <a href="" class="btn btn-danger btn-xs">Eliminar</a>
-                              </td>
-                           </tr>
-                       @endforeach
-                     </tbody>
-                    @endif
-                   </table>
-              </div>
-            </div>
-        </div>
-      </div>
-</div>
 @endsection
