@@ -1,4 +1,4 @@
-@extends('layouts.marco')
+
 @section('situación_economica')
   <form class="form-horizontal" role="form" method="POST" action="{{ url('economics')}}" >
       {{ csrf_field() }}
