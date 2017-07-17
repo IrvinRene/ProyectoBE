@@ -16,11 +16,11 @@ class Mosnoticia extends Controller
     public function index()
     {
         //
-<<<<<<< HEAD
+
         $notis=DB::table('noticias')->orderBy('id','desc')->limit(2)->get();
-=======
+
         $notis=DB::table('noticias')->orderBy('id','desc')->get();
->>>>>>> b0ee0ee2f253ba919801ba0765134b7999428354
+
 
 
 
