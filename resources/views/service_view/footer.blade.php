@@ -1,5 +1,6 @@
 
-<footer class="panel-footer wel">
+<footer class="text-center">
+  <div class="footer-above">
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-sm-6 footer-col">
@@ -35,10 +36,15 @@
       </div>
     </div>
 
-    <div class="col-md-12">
+    <div class="footer-below">
+      <div class="container">
       <div class="row">
+        <div class="col-lg-12">
           <p>© 2016 - Todo los derechos reservados-Bienestar Estudiantil</p>
+        </div>
       </div>
     </div>
+    </div>
   </div>
+</div>
 </footer>

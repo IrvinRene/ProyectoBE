@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 .card {
   background: #fff;
   border-radius: 2px;
@@ -207,5 +206,23 @@
   border-color: #5cb85c; }
 .radio-success input[type="radio"]:checked + label::after {
   background-color: #5cb85c; }
-=======
->>>>>>> 5d25c9a0fc321953054b47f99d6e0973bc3ce407
+footer{
+  color: white;
+}
+footer h3{
+  margin-bottom: : 30px;
+}
+footer .footer-above{
+  padding-top: 50px;
+  background-color: #233140;
+}
+footer .footer-col{
+  margin-bottom: 50px;
+}
+footer .foote-below{
+  padding: 25px 0;
+  background-color: #233140;
+}
+body{
+  overflow-x: hidden;
+}
