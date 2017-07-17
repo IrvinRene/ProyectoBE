@@ -60,26 +60,11 @@
     </head>
     <body>
         <nav class="panel-heading wel">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <h1>Bienestar Estudiantil</h1>
-              </div>
-                <div class="col-md-6">
-                    @if (Route::has('login'))
-                        <div class="top-right links">
-                            @if (Auth::check())
-                                <a href="{{ url('/home') }}">Home</a>
-                            @else
-                                <a href="{{ url('/login') }}">Login</a>
-                            @endif
-                        </div>
-                    @endif
-                </div>
-            </div>
-          </div>
+
         </nav>
         @include('service_view.carousel')
         @include('service_view.footer')
     </body>
+
+
 </html>

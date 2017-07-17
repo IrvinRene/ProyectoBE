@@ -3,14 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
-
 use App\Noticia;
+use DB;
 
-use Storage;
-
-class Noticias extends Controller
+class Mosnoticia extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +16,15 @@ class Noticias extends Controller
     public function index()
     {
         //
-        return view ('layouts.formulario');
+        $notis=DB::table('noticias')->orderBy('id','desc')->get();
+
+
+
+
+
+        return view('mosnoticia', compact('notis'));
+
+
     }
 
     /**
@@ -28,8 +32,6 @@ class Noticias extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-
     public function create()
     {
         //
@@ -43,40 +45,7 @@ class Noticias extends Controller
      */
     public function store(Request $request)
     {
-
-        $this->validate($request,[
-                'titulo'=>'required',
-                'descripcion'=>'required'
-            ]);
-
-
-         $noticia= new Noticia();
-         $noticia->titulo = $request->titulo;
-         $noticia->descripcion = $request->descripcion;
-
-
-         $img = $request->file('urlimgnot');
-
-         $file_route = time().'_'.$img->getClientOriginalName();
-
-         Storage::disk('imgNoticias')->put($file_route, file_get_contents($img->getRealPath() ) );
-
-
-         $noticia->urlimgnot = $file_route;
-
-         if($noticia->save())
-         {
-          return back()->with('msj', 'Datos guardados');
-         }
-         else {
-           return back()->with('msj', 'Datos no guardados');
-         }
-         //dd('Datos guardados');
-
-
-
-
-
+        //
     }
 
     /**
@@ -88,6 +57,9 @@ class Noticias extends Controller
     public function show($id)
     {
         //
+
+
+
     }
 
     /**
@@ -98,9 +70,7 @@ class Noticias extends Controller
      */
     public function edit($id)
     {
-        $noticia= Noticia::find('$id');
-        return view ('modificar')->with (['edit'=> true, 'noticia' => $noticia]);
-
+        //
     }
 
     /**
@@ -113,7 +83,6 @@ class Noticias extends Controller
     public function update(Request $request, $id)
     {
         //
-        dd('update');
     }
 
     /**
@@ -125,12 +94,5 @@ class Noticias extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function mostrar()
-    {
-      $noticias = Noticia::all();
-
-      return view('views.welcome', compact('noticias'));
     }
 }
