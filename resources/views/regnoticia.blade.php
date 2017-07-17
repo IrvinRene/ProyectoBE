@@ -8,12 +8,12 @@
 
                 <div class="panel-body">
                       @if(session()->has('msj'))
-                      <div class="alert alert-success">{{session ('msj')}}</div>
+                      <div class="alert alert-success" role="alert">{{session ('msj')}}</div>
                       @endif
                       @if(session()->has('errormsj'))
-                      <div class="alert alert-success">Error al guardar los datos</div>
+                      <div class="alert alert-success" role="alert">Error al guardar los datos</div>
                       @endif
-                  <form role="form" method="post" action="{{ url('noticia')}}" enctype="multipart/form-data">
+                  <form role="form" method="post" action="{{ url('noticias')}}" enctype="multipart/form-data">
                   {{ csrf_field() }}
                     <div class="form-group">
                       <label for="titulo">Título</label>
@@ -33,10 +33,10 @@
 
                     <div class="form-group">
                       <label for="urlimgnot">Adjuntar imagen</label>
-                      <input type="file" id="urlimgnot">
+                      <input type="file" class="form-control" id="urlimgnot" name="urlimgnot">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-primary">Crear</button>
                   </form>
                 </div>
             </div>
@@ -56,16 +56,21 @@
                        <th>Descripcion</th>
                        <th>Imagen</th>
                      </head>
-                     @endif
+
                      <tbody>
                        @foreach ($noticias as $noticia)
                            <tr>
                              <td>{{$noticia->titulo}}</td>
                              <td>{{$noticia->descripcion}}</td>
-                             <td>{{$noticia->urlimgnot}}</td>
+                             <td> <img src="imgNoticias/{{$noticia->urlimgnot}}" class="img-responsive" alt="Responsive image" style="max-width:100px;"></td>
+                              <td>
+                                <a href="noticias/{{$noticia->id}}/edit" class="btn btn-warning btn-xs">Modificar</a>
+                                <a href="" class="btn btn-danger btn-xs">Eliminar</a>
+                              </td>
                            </tr>
                        @endforeach
                      </tbody>
+                    @endif
                    </table>
               </div>
             </div>

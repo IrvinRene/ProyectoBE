@@ -43,12 +43,12 @@ return [
 
     'disks' => [
 
-      'imgnoticia' => [
+      'imgNoticias' => [
           'driver' => 'local',
-          'root' => public_path('imgnoticia'),
+          'root' => public_path('imgNoticias'),
       ],
 
-      'imgnoticia' => [
+      'imgNoticia' => [
           'driver' => 'local',
           'root' => public_path('imgdocument'),
       ],
